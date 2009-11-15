@@ -38,6 +38,9 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
+# GIT autocomplete
+. /usr/local/git/contrib/completion/git-completion.bash
+
 # Update the command prompt to be <user>:<current_directory>(git_branch) >
 # Note that the git branch is given a special color
 PS1="\n\u:\w \[$EGREEN\]\$(vcprompt)\[$NO_COLOR\] \n→ "

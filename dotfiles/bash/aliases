@@ -4,3 +4,13 @@ alias mvnecl='mvn eclipse:clean eclipse:eclipse'
 alias ec2conn='ssh -i ~/.ec2/bizsphere.pem -l root'
 alias ec2cp='scp -i ~/.ec2/bizsphere.pem '
 alias rt='rake test cucumber:all'
+alias bash-reload='. ~/.profile'
+
+# git aliases
+alias gs='git status'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gl='git log --pretty=format:"%ar - %Cgreen%an%Creset: %s" --graph'
+alias gll='git log --stat'
