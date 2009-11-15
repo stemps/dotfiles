@@ -1,0 +1,6 @@
+alias strato='ssh www.bizsphere.com -l bizsphere'
+alias strato2='ssh h1363573.stratoserver.net -l bizsphere'
+alias mvnecl='mvn eclipse:clean eclipse:eclipse'
+alias ec2conn='ssh -i ~/.ec2/bizsphere.pem -l root'
+alias ec2cp='scp -i ~/.ec2/bizsphere.pem '
+alias rt='rake test cucumber:all'
