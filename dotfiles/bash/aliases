@@ -1,12 +1,23 @@
+# ssh shortcuts
 alias strato='ssh www.bizsphere.com -l bizsphere'
 alias strato2='ssh h1363573.stratoserver.net -l bizsphere'
-alias mvnecl='mvn eclipse:clean eclipse:eclipse'
-alias ec2conn='ssh -i ~/.ec2/bizsphere.pem -l root'
-alias ec2cp='scp -i ~/.ec2/bizsphere.pem '
-alias rt='rake test cucumber:all'
-alias bash-reload='. ~/.profile'
 
-# git aliases
+# Maven
+alias mvnecl='mvn eclipse:clean eclipse:eclipse'
+alias mvnecls='mvn eclipse:clean eclipse:eclipse -DdownloadSources=true'
+
+# Amazon
+alias ec2conn='ssh -i /Volumes/BizSphere/.ec2/bizsphere.pem -l root'
+alias ec2cp='scp -i /Volumes/BizSphere/.ec2/bizsphere.pem '
+
+# rake / rails / ruby
+alias rt='rake test cucumber:all'
+
+
+alias bash-reload='. ~/.profile'
+alias ea='mate -w ~/bin/dotfiles/bash/aliases; bash-reload'
+
+# git 
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
@@ -14,3 +25,5 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gl='git log --pretty=format:"%ar - %Cgreen%an%Creset: %s" --graph'
 alias gll='git log --stat'
+alias gt='git tag'
+alias gcb='git checkout -b'

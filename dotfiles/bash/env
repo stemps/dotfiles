@@ -13,9 +13,13 @@ export PATH=$PATH:"/usr/local/mysql/bin"
 export PATH=$PATH:/Users/simons/.gem/ruby/1.8/bin
 #export PATH="$HOME/bizsphere/jruby/bin:$PATH"
 
-export EC2_PRIVATE_KEY="/Volumes/NO NAME/.ec2/pk-MII4MPZN6KSYJNDVL2QXZL5UP5NQKIBC.pem"
-export EC2_CERT="/Volumes/NO NAME/.ec2/cert-MII4MPZN6KSYJNDVL2QXZL5UP5NQKIBC.pem"
+# EC2
+export EC2_PRIVATE_KEY="/Volumes/BizSphere/.ec2/pk-MII4MPZN6KSYJNDVL2QXZL5UP5NQKIBC.pem"
+export EC2_CERT="/Volumes/BizSphere/.ec2/cert-MII4MPZN6KSYJNDVL2QXZL5UP5NQKIBC.pem"
 
+# Maven
+export M2_HOME=~/opt/apache-maven-2.2.1
+export PATH=$M2_HOME/bin:$PATH
 
 ##
 # Your previous /Users/simons/.profile file was backed up as /Users/simons/.profile.macports-saved_2009-04-01_at_16:33:14
