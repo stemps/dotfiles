@@ -3,34 +3,36 @@ export EDITOR='mate -w'
 # local bin
 export PATH=$PATH:~/bin
 
-export EC2_HOME="/Users/simons/opt/ec2-api-tools-1.3-36506"
+# Amazon EC2
+export EC2_HOME="/Users/simons/opt/ec2-api-tools-1.3-46266"
 export EC2_CLOUDWATCH_HOME="/Users/simons/opt/CloudWatch-1.0"
 export MONITORING_HOME=$EC2_CLOUDWATCH_HOME
 export PATH=$PATH:"$EC2_HOME/bin:$EC2_CLOUDWATCH_HOME/bin"
+. /Volumes/bizsphere/.ec2/env
+
+# MySQL
 export PATH=$PATH:"/usr/local/mysql/bin"
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
-# local gems
-export PATH=$PATH:/Users/simons/.gem/ruby/1.8/bin
-#export PATH="$HOME/bizsphere/jruby/bin:$PATH"
+# Flash
+export PATH=$PATH:"/Applications/Adobe Flash Builder Beta 2/Player/mac/Flash Player.app/Contents/MacOS"
 
-# EC2
-export EC2_PRIVATE_KEY="/Volumes/BizSphere/.ec2/pk-MII4MPZN6KSYJNDVL2QXZL5UP5NQKIBC.pem"
-export EC2_CERT="/Volumes/BizSphere/.ec2/cert-MII4MPZN6KSYJNDVL2QXZL5UP5NQKIBC.pem"
+# JAVA
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 
 # Maven
 export M2_HOME=~/opt/apache-maven-2.2.1
 export PATH=$M2_HOME/bin:$PATH
+export MAVEN_OPTS="-Xms512m -Xmx2048m -XX:MaxPermSize=256m"
 
-##
-# Your previous /Users/simons/.profile file was backed up as /Users/simons/.profile.macports-saved_2009-04-01_at_16:33:14
-##
+# Wireshark
+export PATH=$PATH:$HOME/opt/wireshark/bin
 
-# MacPorts Installer addition on 2009-04-01_at_16:33:14: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
+# RVM
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
+# Sphinx
+export PATH=$PATH:/usr/local/sphinx/bin
 
-# MacPorts Installer addition on 2009-04-01_at_16:33:14: adding an appropriate MANPATH variable for use with MacPorts.
-export MANPATH=/opt/local/share/man:$MANPATH
-# Finished adapting your MANPATH environment variable for use with MacPorts.
-
+# autotest
+export AUTOFEATURE=true
