@@ -1,0 +1,8 @@
+# wunjo git prompt
+fpath=($fpath $HOME/bin/dotfiles/zsh/func)
+typeset -U fpath
+
+setopt promptsubst
+autoload -U promptinit
+promptinit
+prompt simons
