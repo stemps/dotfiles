@@ -519,7 +519,7 @@ def git(path, string, unknown):
     if not os.path.exists(file):
         return None
 
-    branch = hash = modified = untracked = unknown
+    tracked_branch = branch = hash = modified = untracked = unknown
 
     # the current branch is required to get the hash
     if re.search('%(b|r|h)', string):
@@ -577,12 +577,39 @@ def git(path, string, unknown):
             else:
                 untracked = UNTRACKED
 
+    if '%t' in string:
+        command = 'git config branch.' + branch + '.remote'
+        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
+        output = process.communicate()[0]
+        returncode = process.returncode
+
+        if returncode == 0:
+            if output == '':
+                remote = ''
+            else:
+                remote = output.strip()
+
+        command = 'git config branch.' + branch + '.merge'
+        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
+        output = process.communicate()[0]
+        returncode = process.returncode
+
+        if returncode == 0:
+            if output == '':
+                merge_branch = ''
+            else:
+                merge_branch = output.strip().replace('refs/heads/', '')
+	    if remote != '' and merge_branch != '':
+        	tracked_branch = remote + '/' + merge_branch
+        else:
+            tracked_branch = '(not tracking)'
     # formatting
     string = string.replace('%b', branch)
     string = string.replace('%h', hash)
     string = string.replace('%r', hash)
     string = string.replace('%m', modified)
     string = string.replace('%u', untracked)
+    string = string.replace('%t', tracked_branch)
     string = string.replace('%s', 'git')
     string = string.replace('%n', 'git')
     return string
