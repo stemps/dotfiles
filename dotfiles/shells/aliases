@@ -15,7 +15,7 @@ alias rt='rake test cucumber:all'
 
 alias bash-reload='. ~/.profile'
 alias zsh-reload='. ~/.zshrc'
-alias ea='mate -w ~/bin/dotfiles/shells/aliases; bash-reload'
+alias ea='$EDITOR ~/bin/dotfiles/shells/aliases; bash-reload'
 
 # git 
 alias gs='git status'
@@ -40,6 +40,7 @@ alias gxmlb='git checkout contentnuggets/lib/xmlbeans-generated.jar'
 alias gpom='git pull origin master'
 #alias grma='for x in `git status | grep deleted | awk \'{print $3}\'`; do git rm $x; done'
 alias gcp="git cherry-pick"
+alias gdc="git diff --cached"
 
 
 # bizsphere

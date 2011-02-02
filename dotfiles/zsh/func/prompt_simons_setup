@@ -4,19 +4,6 @@
 autoload -U zgitinit
 zgitinit
 
-prompt_grb_help () {
-  cat <<'EOF'
-
-  prompt simons
-
-EOF
-}
-
-revstring() {
-	git describe --always $1 2>/dev/null ||
-	git rev-parse --short $1 2>/dev/null
-}
-
 coloratom() {
 	local off=$1 atom=$2
 	if [[ $atom[1] == [[:upper:]] ]]; then
@@ -76,12 +63,6 @@ function prompt_grb_scm_time_since_commit() {
     fi
 }
 
-function prompt_grb_scm_info() {
-    if zgit_inworktree; then
-        echo "($(prompt_grb_scm_time_since_commit)|$(prompt_wunjo_scm_branch))"
-    fi
-}
-
 prompt_simons_setup() {
     local verbose
     if [[ $TERM == screen* ]] && [ -n "$STY" ]; then
@@ -131,17 +112,18 @@ prompt_simons_setup() {
     pc[date]='cyan'
     pc[time]='Blue'
     pc[host]='Green'
-    pc[user]='cyan'
+    pc[user]='white'
     pc[punc]='yellow'
     pc[line]='magenta'
-    pc[hist]='green'
-    pc[path]='Cyan'
+    pc[hist]='cyan'
+    pc[path]='yellow'
     pc[shortpath]='default'
     pc[rc]='red'
-    pc[scm_branch]='Cyan'
+    pc[scm_branch]='green'
     pc[scm_commitid]='Yellow'
     pc[scm_status_dirty]='Red'
-    pc[scm_status_staged]='Green'
+    pc[scm_status_staged]='green'
+    pc[scm_remote_branch]='Cyan'
     pc[scm_time_short]='green'
     pc[scm_time_medium]='yellow'
     pc[scm_time_long]='red'
@@ -165,37 +147,13 @@ prompt_simons_setup() {
 	if [ $verbose ]; then
 		PROMPT+=""
 	fi
-	#PROMPT+="$pc[path]%(2~.%~.%/)$pc[reset]"
-	#PROMPT+="\$(prompt_wunjo_scm_status)"
-	#PROMPT+="%(?.. $pc[rc]exited %1v$pc[reset])"
-#    PROMPT+="
-#"
-	#PROMPT+="($pc[hist]%h$pc[reset])"
-
-#	GRB
-#	PROMPT+=":$pc[shortpath]%1~$pc[reset]"
-	#     PROMPT+="\$(prompt_grb_scm_info)"
-	# PROMPT+=" $pc[#]\$$pc[reset] "
-	# 
-	# PROMPT+=":$pc[shortpath]%1~$pc[reset]"
-	#     PROMPT+="\$(prompt_grb_scm_info)"
-	# PROMPT+=" $pc[#]\$$pc[reset] "
 
 	PROMPT+="
 "
-	PROMPT+="$(prompt_wunjo_scm_status)
-"
-	PROMPT+="$pc[hist]%h)$pc[reset] $pc[user]%n$pc[reset]@$pc[host]%m$pc[reset]:$pc[path]%~$pc[reset]"
+	PROMPT+="$pc[hist][%h]$pc[reset] $pc[user]%n$pc[reset]:$pc[path]%~$pc[reset] $(vcprompt --format $pc[scm_branch]\[%s:%b\ →\ $pc[scm_remote_branch]%t$pc[scm_branch]])"
 	PROMPT+="
 "
 	PROMPT+="$pc[#]→ $pc[reset] "
-
-    #RPROMPT=
-    #if [ $verbose ]; then
-    #	RPROMPT+="$p_date "
-    #fi
-    #RPROMPT+="$pc[user]%n$pc[reset]"
-    #RPROMPT+=" $p_line"
 
 	export PROMPT RPROMPT
 	precmd_functions+='prompt_wunjo_precmd'

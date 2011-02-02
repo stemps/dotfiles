@@ -1,14 +1,15 @@
-export EDITOR='mate -w'
+#export EDITOR='mate -w'
+export EDITOR='vim'
 
 # local bin
-export PATH=$PATH:~/bin
+export PATH=~/bin:$PATH
 
 # Amazon EC2
 export EC2_HOME="/Users/simons/opt/ec2-api-tools-1.3-46266"
 export EC2_CLOUDWATCH_HOME="/Users/simons/opt/CloudWatch-1.0"
 export MONITORING_HOME=$EC2_CLOUDWATCH_HOME
 export PATH=$PATH:"$EC2_HOME/bin:$EC2_CLOUDWATCH_HOME/bin"
-. /Volumes/bizsphere/.ec2/env
+[[ -s /Volumes/bizsphere/.ec2/env ]] && source /Volumes/bizsphere/.ec2/env
 
 # MySQL
 export PATH=$PATH:"/usr/local/mysql/bin"
@@ -29,10 +30,17 @@ export MAVEN_OPTS="-Xms512m -Xmx2048m -XX:MaxPermSize=256m"
 export PATH=$PATH:$HOME/opt/wireshark/bin
 
 # RVM
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+[[ -s $home/.rvm/scripts/rvm ]] && source $home/.rvm/scripts/rvm
 
-# Sphinx
-export PATH=$PATH:/usr/local/sphinx/bin
+# sphinx
+export path=$path:/usr/local/sphinx/bin
 
 # autotest
 export AUTOFEATURE=true
+
+# fix permissions for scripts on dropbox
+files=( '/Users/simons/bin/vcprompt' )
+for file in ${files[@]}
+do
+	chmod u+x $file
+done

@@ -602,7 +602,7 @@ def git(path, string, unknown):
 	    if remote != '' and merge_branch != '':
         	tracked_branch = remote + '/' + merge_branch
         else:
-            tracked_branch = '(not tracking)'
+            tracked_branch = 'none'
     # formatting
     string = string.replace('%b', branch)
     string = string.replace('%h', hash)
