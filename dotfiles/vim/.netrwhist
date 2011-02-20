@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Volumes/papersmart/rimini/app/controllers'
 let g:netrw_dirhist_2='/Volumes/papersmart/rimini/features/step_definitions'
 let g:netrw_dirhist_3='/Volumes/papersmart/rimini'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Volumes/papersmart/rimini/features/support'
 let g:netrw_dirhist_6='/Users/simons/Dropbox/Config/bin/dotfiles/shells'
 let g:netrw_dirhist_7='/Users/simons/Dropbox/Config/bin/dotfiles'
 let g:netrw_dirhist_8='/Users/simons/Dropbox/Config/bin/dotfiles/bash'
+let g:netrw_dirhist_9='/Volumes/papersmart/rimini'
