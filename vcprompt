@@ -519,7 +519,7 @@ def git(path, string, unknown):
     if not os.path.exists(file):
         return None
 
-    tracked_branch = branch = hash = modified = untracked = unknown
+    pending_commits = pending_merges = tracked_branch = branch = hash = modified = untracked = unknown
 
     # the current branch is required to get the hash
     if re.search('%(b|r|h)', string):
@@ -583,11 +583,10 @@ def git(path, string, unknown):
         output = process.communicate()[0]
         returncode = process.returncode
 
-        if returncode == 0:
-            if output == '':
-                remote = ''
-            else:
-                remote = output.strip()
+        if returncode == 0 and output != '':
+            remote = output.strip()
+        else:
+            remote = ''
 
         command = 'git config branch.' + branch + '.merge'
         process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
@@ -599,10 +598,49 @@ def git(path, string, unknown):
                 merge_branch = ''
             else:
                 merge_branch = output.strip().replace('refs/heads/', '')
-	    if remote != '' and merge_branch != '':
-        	tracked_branch = remote + '/' + merge_branch
+        if remote != '' and merge_branch != '':
+            tracked_branch = remote + '/' + merge_branch
         else:
             tracked_branch = 'none'
+    if '%pc' in string:
+        command = 'git status'
+        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
+        output = process.communicate()[0]
+        returncode = process.returncode
+
+        if returncode == 0:
+            matches = re.search('Your branch is ahead of \'.*\' by (\d+) commit', output)
+            if matches:
+                pending_commits = matches.group(1)
+            else:
+                matches = re.search('and have (\d+) and (\d+) different commit\(s\) each, respectively.', output)
+                if matches:
+                    pending_commits = matches.group(1)
+                else:
+                    pending_commits = ''
+
+        if pending_commits != '':
+            pending_commits = "(+" + pending_commits + ")"
+
+    if '%pm' in string:
+        command = 'git status'
+        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
+        output = process.communicate()[0]
+        returncode = process.returncode
+
+        if returncode == 0:
+            matches = re.search('Your branch is behind \'.*\' by (\d+) commit, and can be fast-forwarded', output)
+            if matches:
+                pending_merges = matches.group(1)
+            else:
+                matches = re.search('and have (\d+) and (\d+) different commit\(s\) each, respectively.', output)
+                if matches:
+                    pending_merges = matches.group(2)
+                else:
+                    pending_merges = ''
+        if pending_merges != '':
+            pending_merges = "(+" + pending_merges + ")"
+
     # formatting
     string = string.replace('%b', branch)
     string = string.replace('%h', hash)
@@ -612,6 +650,8 @@ def git(path, string, unknown):
     string = string.replace('%t', tracked_branch)
     string = string.replace('%s', 'git')
     string = string.replace('%n', 'git')
+    string = string.replace('%pc', pending_commits)
+    string = string.replace('%pm', pending_merges)
     return string
 
 
