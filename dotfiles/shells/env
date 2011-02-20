@@ -1,6 +1,9 @@
 #export EDITOR='mate -w'
 export EDITOR='vim'
 
+# enable command line color
+export CLICOLOR=1
+
 # local bin
 export PATH=~/bin:$PATH
 
@@ -29,17 +32,18 @@ export MAVEN_OPTS="-Xms512m -Xmx2048m -XX:MaxPermSize=256m"
 # Wireshark
 export PATH=$PATH:$HOME/opt/wireshark/bin
 
+
 # RVM
-[[ -s $home/.rvm/scripts/rvm ]] && source $home/.rvm/scripts/rvm
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # sphinx
-export path=$path:/usr/local/sphinx/bin
+export PATH=$PATH:/usr/local/sphinx/bin
 
 # autotest
 export AUTOFEATURE=true
 
 # fix permissions for scripts on dropbox
-files=( '/Users/simons/bin/vcprompt' )
+files=( '/Users/simons/bin/vcprompt' '/Users/simons/bin/mvim' )
 for file in ${files[@]}
 do
 	chmod u+x $file
