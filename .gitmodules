@@ -1,6 +1,0 @@
-[submodule "dotfiles/vim/bundle/fuzzy_file_finder"]
-	path = dotfiles/vim/bundle/fuzzy_file_finder
-	url = https://github.com/jamis/fuzzy_file_finder.git
-[submodule "dotfiles/vim/bundle/fuzzyfinder_textmate"]
-	path = dotfiles/vim/bundle/fuzzyfinder_textmate
-	url = https://github.com/sethbc/fuzzyfinder_textmate.git
