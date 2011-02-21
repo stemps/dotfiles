@@ -609,7 +609,7 @@ def git(path, string, unknown):
         returncode = process.returncode
     if '%pc' in string:
         if returncode == 0:
-            matches = re.search('Your branch is ahead of \'.*\' by (\d+) commit', output)
+            matches = re.search('Your branch is ahead of \'.*\' by (\d+) commits?', output)
             if matches:
                 pending_commits = matches.group(1)
             else:
@@ -624,7 +624,7 @@ def git(path, string, unknown):
 
     if '%pm' in string:
         if returncode == 0:
-            matches = re.search('Your branch is behind \'.*\' by (\d+) commit, and can be fast-forwarded', output)
+            matches = re.search('Your branch is behind \'.*\' by (\d+) commits+, and can be fast-forwarded', output)
             if matches:
                 pending_merges = matches.group(1)
             else:
