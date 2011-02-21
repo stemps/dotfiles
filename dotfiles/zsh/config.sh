@@ -1,26 +1,27 @@
-# wunjo git prompt
-fpath=($fpath $HOME/bin/dotfiles/zsh/func)
-typeset -U fpath
+HISTFILE=~/.zsh_history
+SAVEHIST=10000
+HISTSIZE=10000
+setopt inc_append_history
+setopt share_history
 
-
-#HISTFILE=~/.zsh_history
-#SAVEHIST=10000
-#HISTSIZE=10000
-
-#REPORTTIME=10
-#LISTMAX=0
+REPORTTIME=10
+LISTMAX=0
 
 ## auto completions
-#autoload compinit
-#compinit
+autoload compinit
+compinit
 
 ## enable VIM style navigation
-#bindkey -v
+bindkey -v
 
-setopt promptsubst
-autoload -U promptinit
-promptinit
-prompt simons
+# bit keep search key bindings
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
+
+# enable ctrl-a and ctrl-k in VI mode
+bindkey -M viins '^a' beginning-of-line
+bindkey -M viins '^k' kill-line
+
 
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
 # misc
@@ -63,22 +64,25 @@ BCYAN=$'\e[46m'
 BWHITE=$'\e[47m'
 
 
-autoload -U colors && colors
+setopt promptsubst
 
-# Update the command prompt to be <user>:<current_directory>(git_branch) >
-# Note that the git branch is given a special color
+function zle-line-init zle-keymap-select {
+    VIMODE="$NO_COLOR"
+    VIMODE="${${KEYMAP/vicmd/$YELLOW}/(main|viins)/$NO_COLOR}"
+    zle reset-prompt
+}
 
-#PS1='\n$CYAN[\!]$NO_COLOR \u:%{$YELLOW%}\w%{$NO_COLOR%} $(vcprompt --format \"%{$GREEN%}[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$GREEN%} → %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}]%{$NO_COLOR%}\")%{$NO_COLOR%} \n→ '
-
-#$pc[hist][%h]$pc[reset] $pc[user]%n$pc[reset]:$pc[path]%~$pc[reset] $(vcprompt --format $pc[scm_branch]\[%s:%b$pc[scm_pending_commits]%pc$pc[scm_status_dirty]%m%u$pc[scm_branch]\ →\ $pc[scm_remote_branch]%t$pc[scm_pending_merges]%pm$pc[scm_branch]\])
-
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 PS1='
 %{$CYAN%}[%h]%{$NO_COLOR%} %n:%{$YELLOW%}%~%{$NO_COLOR%} $(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}])%{$NO_COLOR%}
-→ '
-
-#PROMPT='%{\e$RED%}Hallo! '
-#PS1='$RED$ $(vcprompt) \e[0m'
+$VIMODE→ '
 
 
+# ctrl-e opens commandline in editor
+autoload -U   edit-command-line
+zle -N        edit-command-line
+bindkey -M viins '^e' edit-command-line
+bindkey -M vicmd '^e' edit-command-line
 
