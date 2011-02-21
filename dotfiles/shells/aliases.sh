@@ -60,3 +60,9 @@ alias rt="DISPLAY_AVAILABLE=false rake"
 alias rta="DISPLAY_AVAILABLE=true rake"
 alias rat="DISPLAY_AVAILABLE=false autotest"
 alias rsd="rails server --debugger"
+
+# create directory and change into it
+function mcd {
+  mkdir $1
+  cd $1
+}
