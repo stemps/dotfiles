@@ -63,22 +63,21 @@ BMAGENTA=$'\e[45m'
 BCYAN=$'\e[46m'
 BWHITE=$'\e[47m'
 
-
 setopt promptsubst
 
 function zle-line-init zle-keymap-select {
     VIMODE="$NO_COLOR"
     VIMODE="${${KEYMAP/vicmd/$YELLOW}/(main|viins)/$NO_COLOR}"
+    echo -n # workaround for issue that lets prompt move up when swithcing to VI CMD mode
     zle reset-prompt
 }
 
-zle -N zle-line-init
+#zle -N zle-line-init
 zle -N zle-keymap-select
 
 PS1='
 %{$CYAN%}[%h]%{$NO_COLOR%} %n:%{$YELLOW%}%~%{$NO_COLOR%} $(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}])%{$NO_COLOR%}
-$VIMODE→ '
-
+%{$VIMODE%}→ '
 
 # ctrl-e opens commandline in editor
 autoload -U   edit-command-line
