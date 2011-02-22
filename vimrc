@@ -115,6 +115,9 @@ map <leader>Ff :Ack -Q  ""<Left>
 "nnoremap <F5> :buffers<CR>:buffer<Space>
 map <F5> <leader>be
 
+"Taglist
+nnoremap <silent> <F7> :TlistToggle<CR>
+
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
  
@@ -202,8 +205,6 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-if exists('*HexHighlight()')
-  nmap <leader>h :call HexHighlight()<Return>
-endif
+nmap <leader>h :call HexHighlight()<Return>
 
 

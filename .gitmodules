@@ -46,3 +46,7 @@
 	path = vim/bundle/git-vim
 	url = https://github.com/motemen/git-vim.git
   ignore = untracked
+[submodule "vim/bundle/taglist.vim"]
+	path = vim/bundle/taglist.vim
+	url = https://github.com/vim-scripts/taglist.vim.git
+  ignore = untracked
