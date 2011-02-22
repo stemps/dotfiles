@@ -10,6 +10,7 @@
 [submodule "vim/bundle/bufexplorer"]
 	path = vim/bundle/bufexplorer
 	url = https://github.com/markabe/bufexplorer.git
+  ignore = untracked
 [submodule "vim/bundle/fuzzy_file_finder"]
 	path = vim/bundle/fuzzy_file_finder
 	url = https://github.com/jamis/fuzzy_file_finder.git
@@ -22,12 +23,10 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "git/bundle/snipmate.vim"]
-	path = git/bundle/snipmate.vim
-	url = https://github.com/msanders/snipmate.vim.git
 [submodule "vim/bundle/snipmate.vim"]
 	path = vim/bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
+  ignore = untracked
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
@@ -43,3 +42,7 @@
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = git@github.com:stemps/vim-rails.git
+[submodule "vim/bundle/git-vim"]
+	path = vim/bundle/git-vim
+	url = https://github.com/motemen/git-vim.git
+  ignore = untracked
