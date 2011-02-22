@@ -50,3 +50,6 @@
 	path = vim/bundle/taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim.git
   ignore = untracked
+[submodule "vim/bundle/ruby-matchit"]
+	path = vim/bundle/ruby-matchit
+	url = git://github.com/vim-scripts/ruby-matchit.git
