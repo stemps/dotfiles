@@ -1,4 +1,0 @@
-. ~/bin/dotfiles/zsh/config.sh
-. ~/bin/dotfiles/shells/env.sh
-. ~/bin/dotfiles/shells/aliases.sh
-

@@ -1,0 +1,7 @@
+[user]
+	name = Simon Stemplinger
+	email = simon@simon-stemplinger.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto

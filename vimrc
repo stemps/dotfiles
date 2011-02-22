@@ -112,7 +112,8 @@ map <leader>FF :Ack ""<Left>
 map <leader>Ff :Ack -Q  ""<Left>
 
 " quickly change buffers
-nnoremap <F5> :buffers<CR>:buffer<Space>
+"nnoremap <F5> :buffers<CR>:buffer<Space>
+map <F5> <leader>be
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
