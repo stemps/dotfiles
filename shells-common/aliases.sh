@@ -13,9 +13,24 @@ alias ec2cp='scp -i /Volumes/bizsphere/.ec2/bizsphere.pem '
 alias rt='rake test cucumber:all'
 
 
-alias bash-reload='. ~/.profile'
+alias bash-reload='. ~/.bashrc'
 alias zsh-reload='. ~/.zshrc'
-alias ea='$EDITOR ~/bin/dotfiles/shells/aliases; bash-reload'
+alias ea='$EDITOR ~/dotfiles/shells-common/aliases.sh; env_reload'
+
+function env_reload {
+  CURRENT_SHELL=`ps | grep "^ *$$" | awk '{ print $4 }'`
+  echo "Current shell is $CURRENT_SHELL"
+  if  [[ $CURRENT_SHELL == "-zsh" ]]
+  then
+    echo Reloading zsh...
+    zsh-reload
+  fi
+  if  [[ $CURRENT_SHELL == "bash" ]]
+  then
+    echo Reloading bash...
+    bash-reload
+  fi
+}
 
 # git 
 alias gs='git status'

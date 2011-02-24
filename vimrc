@@ -47,6 +47,7 @@ set directory=/tmp//,.  " Keep swap files in one location
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
+set textwidth=120
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
@@ -87,6 +88,9 @@ map <leader>fd :FufDir<Enter>
 map <leader>fc :FufChangeList<Enter>
 map <leader>fq :FufQuickfix<Enter>
 map <leader>fl :FufLine<Enter>
+map <leader>fr :FufRenewCache<Enter>
+map <leader>ft :FufTag<Enter>
+map <leader>fT :FufTagWithCursorWord<Enter>
 
 " Tabularize
 if exists(":Tabularize")
@@ -108,8 +112,17 @@ map <F3> :NERDTreeToggle<Enter>
 map <leader>nr :NERDTreeFind<Enter>
 
 "Ack Plugin
-map <leader>FF :Ack ""<Left>
-map <leader>Ff :Ack -Q  ""<Left>
+map <leader>FF :Ack -Q ""<Left>
+map <leader>Ff :Ack ""<Left>
+map <leader>FA :Ack -Q "<c-r><c-w>"<CR>
+map <leader>Fa :Ack "<c-r><c-w>"<CR>
+
+" Rails Plugin
+map <leader>rm :Rmodel<CR>
+map <leader>rc :Rcontroller<CR>
+map <leader>rv :Rview<CR>
+map <leader>rm :Rmodel<CR>
+map <leader>rs :A<CR>
 
 " quickly change buffers
 "nnoremap <F5> :buffers<CR>:buffer<Space>
