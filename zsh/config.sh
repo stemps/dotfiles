@@ -20,6 +20,7 @@ bindkey -M vicmd '^r' history-incremental-search-backward
 
 # enable ctrl-a and ctrl-k in VI mode
 bindkey -M viins '^a' beginning-of-line
+bindkey -M viins '^e' end-of-line
 bindkey -M viins '^k' kill-line
 
 
@@ -78,16 +79,21 @@ zle -N zle-keymap-select
 
 # determine VCS info before prompt is loaded. Such that it doesn't have to be recalculated when the prompt is redrawn
 precmd() {
-  VCS_INFO="$(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}])"
+  VCS_INFO="$(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}]%{$NO_COLOR%})"
+  RVM_INFO="[$(rvm-prompt i v p g)]"
+  if [[ "$RVM_INFO" == "[]" ]] ; then
+    RVM_INFO=""
+  fi
+  RVM_INFO="%{$BLUE%}$RVM_INFO%{$NO_COLOR%}"
 }
 
 PROMPT='
-%{$CYAN%}[%h]%{$NO_COLOR%} %n:%{$YELLOW%}%~%{$NO_COLOR%} $VCS_INFO%{$NO_COLOR%}
+%{$CYAN%}[%h]%{$NO_COLOR%} %n:%{$YELLOW%}%~ $VCS_INFO $RVM_INFO
 %{$VIMODE%}→ '
 
 # ctrl-e opens commandline in editor
 autoload -U   edit-command-line
 zle -N        edit-command-line
-bindkey -M viins '^e' edit-command-line
-bindkey -M vicmd '^e' edit-command-line
+bindkey -M viins '^v' edit-command-line
+bindkey -M vicmd '^v' edit-command-line
 
