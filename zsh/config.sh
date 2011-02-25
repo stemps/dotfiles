@@ -65,6 +65,7 @@ BWHITE=$'\e[47m'
 
 setopt promptsubst
 
+# determine VI-mode
 function zle-line-init zle-keymap-select {
     VIMODE="$NO_COLOR"
     VIMODE="${${KEYMAP/vicmd/$YELLOW}/(main|viins)/$NO_COLOR}"
@@ -75,8 +76,13 @@ function zle-line-init zle-keymap-select {
 #zle -N zle-line-init
 zle -N zle-keymap-select
 
-PS1='
-%{$CYAN%}[%h]%{$NO_COLOR%} %n:%{$YELLOW%}%~%{$NO_COLOR%} $(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}])%{$NO_COLOR%}
+# determine VCS info before prompt is loaded. Such that it doesn't have to be recalculated when the prompt is redrawn
+precmd() {
+  VCS_INFO="$(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}])"
+}
+
+PROMPT='
+%{$CYAN%}[%h]%{$NO_COLOR%} %n:%{$YELLOW%}%~%{$NO_COLOR%} $VCS_INFO%{$NO_COLOR%}
 %{$VIMODE%}→ '
 
 # ctrl-e opens commandline in editor

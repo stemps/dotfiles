@@ -58,6 +58,7 @@ alias gpom='git pull origin master'
 #alias grma='for x in `git status | grep deleted | awk \'{print $3}\'`; do git rm $x; done'
 alias gcp="git cherry-pick"
 alias gdc="git diff --cached"
+alias gd="git diff"
 
 
 # bizsphere
