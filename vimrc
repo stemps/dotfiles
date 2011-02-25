@@ -150,9 +150,8 @@ map <a-k> :bp<Enter>
 map <a-j> :bn<Enter>
 map <a-w> :bd<Enter>
 
-" un-highlight current pattern on ESC
-nnoremap <esc> :noh<return><esc>
-
+" un-highlight current pattern on CR
+nnoremap <CR> :noh<CR><CR>
 
 if has("autocmd")
   filetype on 
