@@ -126,7 +126,7 @@ map <leader>rs :A<CR>
 
 " quickly change buffers
 "nnoremap <F5> :buffers<CR>:buffer<Space>
-map <F5> <leader>be
+map <F4> <leader>be
 
 "Taglist
 nnoremap <silent> <F7> :TlistToggle<CR>

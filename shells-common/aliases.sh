@@ -76,6 +76,8 @@ alias rt="DISPLAY_AVAILABLE=false rake"
 alias rta="DISPLAY_AVAILABLE=true rake"
 alias rat="DISPLAY_AVAILABLE=false autotest"
 alias rsd="rails server --debugger"
+alias b="bundle"
+alias be="bundle exec"
 
 # create directory and change into it
 function mcd {

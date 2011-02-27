@@ -51,3 +51,7 @@
 	path = vim/bundle/Gundo
 	url = https://github.com/vim-scripts/Gundo.git
   ignore = untracked
+[submodule "vim-ruby-refactoring"]
+	path = vim-ruby-refactoring
+	url = https://github.com/ecomba/vim-ruby-refactoring.git
+  ignore = untracked
