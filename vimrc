@@ -56,11 +56,17 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 set guifont=Inconsolata-dz:h12
 set guioptions=m	" hide top menu bar
 
+set mouse=a
+
 " highlight current line
 set cursorline
 
 if has("mac") && has("gui")
   set macmeta
+
+  " enable fullscreen
+  set fuopt+=maxhorz                      
+  map <D-CR> :set invfu<CR>                
 endif
 
 " Theme
