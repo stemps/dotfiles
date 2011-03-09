@@ -67,14 +67,12 @@ BWHITE=$'\e[47m'
 setopt promptsubst
 
 # determine VI-mode
-function zle-line-init zle-keymap-select {
-    VIMODE="$NO_COLOR"
-    VIMODE="${${KEYMAP/vicmd/$YELLOW}/(main|viins)/$NO_COLOR}"
-    echo -n # workaround for issue that lets prompt move up when swithcing to VI CMD mode
-    zle reset-prompt
+function zle-keymap-select {
+  VIMODE="${${KEYMAP/vicmd/$YELLOW}/(main|viins)/$NO_COLOR}"
+  echo -n # workaround for issue that lets prompt move up when swithcing to VI CMD mode
+  zle reset-prompt
 }
 
-#zle -N zle-line-init
 zle -N zle-keymap-select
 
 # determine VCS info before prompt is loaded. Such that it doesn't have to be recalculated when the prompt is redrawn
@@ -85,6 +83,11 @@ precmd() {
     RVM_INFO=""
   fi
   RVM_INFO="%{$BLUE%}$RVM_INFO%{$NO_COLOR%}"
+}
+
+preexec(){
+  VIMODE="$NO_COLOR"
+  echo -n "$VIMODE"
 }
 
 PROMPT='
