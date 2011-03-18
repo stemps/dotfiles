@@ -7,12 +7,18 @@ setopt share_history
 REPORTTIME=10
 LISTMAX=0
 
+#fpath=(~/dotfiles/zsh/functions $fpath)
+#autoload rails
+
 ## auto completions
 autoload compinit
 compinit
 
 ## enable VIM style navigation
 bindkey -v
+
+bindkey '^_' undo
+#bindkey -M menuselect '^o' accept-and-infer-next-history
 
 # bit keep search key bindings
 bindkey -M viins '^r' history-incremental-search-backward

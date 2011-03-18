@@ -1,0 +1,19 @@
+#compdef rails
+#autoload
+
+local -a _1st_arguments
+_1st_arguments=(
+    'server:Start server'
+    'console:interactive rails console'
+    'dbconsole:open database console'
+    'generate:generate migration, model, scaffold, ...'
+)
+
+_arguments \
+  '*:: :->subcmds' && return 0
+
+if (( CURRENT == 1 )); then
+  _describe -t commands "rails subcommand" _1st_arguments
+  return
+fi
+
