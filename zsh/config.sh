@@ -29,6 +29,12 @@ bindkey -M viins '^a' beginning-of-line
 bindkey -M viins '^e' end-of-line
 bindkey -M viins '^k' kill-line
 
+# use ssh known hosts file for autocompletion
+local knownhosts
+knownhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*} ) 
+zstyle ':completion:*:(ssh|scp|sftp):*' hosts $knownhosts
+
+
 
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
 # misc
