@@ -59,3 +59,6 @@
 	path = vim/bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag.git
   ignore = untracked
+[submodule "vim/bundle/html-improved-indentation"]
+	path = vim/bundle/html-improved-indentation
+	url = https://github.com/vim-scripts/html-improved-indentation.git
