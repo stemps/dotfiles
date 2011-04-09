@@ -162,7 +162,7 @@ nnoremap <CR> :noh<CR><CR>
 if has("autocmd")
   filetype on 
   autocmd FileType ruby imap <C-l> =><Space>
-  autocmd FileType html,css,scss,python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType xml,html,css,scss,python setlocal ts=4 sts=4 sw=4 expandtab
 endif
 
 " automatically align cucumber bars (https://gist.github.com/287147)
