@@ -21,6 +21,9 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 # Flash
 export PATH=$PATH:"/Applications/Adobe Flash Builder Beta 2/Player/mac/Flash Player.app/Contents/MacOS"
 
+# Flex
+export FLEX_SDK_HOME_33=/Users/Shared/FlexSDKs/3.3.0.4852
+
 # JAVA
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 
