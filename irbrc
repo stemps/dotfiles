@@ -1,8 +1,6 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
 require 'rubygems'
-%x{gem install 'wirble' --no-ri --no-rdoc} unless Gem.available?('wirble')
-%x{gem install 'interactive_editor' --no-ri --no-rdoc} unless Gem.available?('interactive_editor')
 Gem.refresh 
 require 'wirble'
 require 'interactive_editor'
