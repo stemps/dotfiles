@@ -5,6 +5,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+set nostartofline                 " Remeber cursor column after buffer switch
+
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
@@ -196,20 +198,6 @@ endif
 "NERDtree defaults
 let NERDTreeHijackNetrw=0
 let NERDTreeShowBookmarks=1 
-
-" maximize active window, but leave space for others if current window has
-" reasonable size
-if winheight(0) > 30
-  set winheight=15
-  set winminheight=15
-endif
-if winwidth(0) > 80
-  set winwidth=40
-  set winminwidth=40
-endif
-set winheight=999
-set winwidth=999
-
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
