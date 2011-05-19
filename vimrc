@@ -5,6 +5,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+set shellcmdflag=-ic          " make it behave like an interactive shell (i.e. have aliases)
+
 set nostartofline                 " Remeber cursor column after buffer switch
 
 set nocompatible                  " Must come first because it changes other options.
