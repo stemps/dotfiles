@@ -135,6 +135,7 @@ map <leader>rs :A<CR>
 " quickly change buffers
 "nnoremap <F5> :buffers<CR>:buffer<Space>
 map <F4> <leader>be
+let g:bufExplorerShowRelativePath=1
 
 "Taglist
 nnoremap <silent> <F7> :TlistToggle<CR>
