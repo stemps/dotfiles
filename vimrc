@@ -214,4 +214,7 @@ endfunc
 
 nmap <leader>h :call HexHighlight()<Return>
 
+" auto-close fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
 
