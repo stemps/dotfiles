@@ -98,6 +98,7 @@ map <leader>fl :FufLine<Enter>
 map <leader>fr :FufRenewCache<Enter>
 map <leader>ft :FufTag<Enter>
 map <leader>fT :FufTagWithCursorWord<Enter>
+let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|public/system'
 
 " Tabularize
 if exists(":Tabularize")
