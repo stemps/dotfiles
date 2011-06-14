@@ -79,6 +79,7 @@
 [submodule "vim/bundle/css.vim"]
 	path = vim/bundle/css.vim
 	url = git://gist.github.com/762326.git
+  ignore = untracked
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
