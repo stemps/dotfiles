@@ -84,3 +84,9 @@
 	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
   ignore = untracked
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = https://github.com/wincent/Command-T.git
+[submodule "vim/bundle/simple-pairs"]
+	path = vim/bundle/simple-pairs
+	url = https://github.com/vim-scripts/simple-pairs.git

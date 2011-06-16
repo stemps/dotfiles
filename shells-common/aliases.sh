@@ -71,8 +71,8 @@ alias bbe="ant clean compile package transfer deploy"
 alias rs='rails server'
 alias rdb='rails dbconsole'
 alias rco='rails console'
-alias rmigd='rake db:migrate RAILS_ENV=development'
-alias rmigt='rake db:migrate RAILS_ENV=test'
+alias rmigd='bundle exec rake db:migrate RAILS_ENV=development'
+alias rmigt='bundle exec rake db:migrate RAILS_ENV=test'
 alias rt="DISPLAY_AVAILABLE=false rake"
 alias rta="DISPLAY_AVAILABLE=true rake"
 alias rat="DISPLAY_AVAILABLE=false autotest"

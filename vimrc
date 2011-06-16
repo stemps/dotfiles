@@ -48,7 +48,6 @@ set directory=/tmp//,.  " Keep swap files in one location
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
-set textwidth=120
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
@@ -86,9 +85,6 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 " FuzzyFinder
-map <leader>ff :FufCoverageFile<Enter>
-map <leader>o :FufCoverageFile<Enter>
-map <F2> :FufCoverageFile<Enter>
 map <leader>fb :FufBuffer<Enter>
 map <leader>fs :FufFile<Enter>
 map <leader>fd :FufDir<Enter>
