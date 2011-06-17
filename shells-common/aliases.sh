@@ -35,7 +35,7 @@ function env_reload {
 # git 
 alias gs='git status'
 alias ga='git add'
-alias gpl='git pull'
+alias gpff='git pull --ff-only'
 alias gf='git fetch'
 alias gaa='git add -A; gs'
 alias gb='git branch'
