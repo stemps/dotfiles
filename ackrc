@@ -1,0 +1,3 @@
+--ignore-dir=public/system
+
+--type-add=css=.scss
