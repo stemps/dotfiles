@@ -1,5 +1,5 @@
 #export EDITOR='mate -w'
-export EDITOR='~/bin/vim'
+export EDITOR='vi'
 
 # enable command line color
 export CLICOLOR=1

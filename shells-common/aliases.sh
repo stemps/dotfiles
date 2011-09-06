@@ -32,6 +32,10 @@ function env_reload {
   fi
 }
 
+function current_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
 # git 
 alias gs='git status'
 alias ga='git add'
@@ -60,6 +64,8 @@ alias gpom='git pull origin master'
 alias gcp="git cherry-pick"
 alias gdc="git diff --cached"
 alias gd="git diff"
+# push current branch to origin
+alias gpbo='git push origin `current_git_branch` -u'
 
 
 # bizsphere
@@ -71,11 +77,9 @@ alias bbe="ant clean compile package transfer deploy"
 alias rs='rails server'
 alias rdb='rails dbconsole'
 alias rco='rails console'
+alias rpry='pry -r ./config/environment'
 alias rmigd='bundle exec rake db:migrate RAILS_ENV=development'
 alias rmigt='bundle exec rake db:migrate RAILS_ENV=test'
-alias rt="DISPLAY_AVAILABLE=false rake"
-alias rta="DISPLAY_AVAILABLE=true rake"
-alias rat="DISPLAY_AVAILABLE=false autotest"
 alias rsd="rails server --debugger"
 alias b="bundle"
 alias be="bundle exec"
