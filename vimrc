@@ -74,6 +74,21 @@ endif
 colorscheme railscasts
 "colorscheme molokai
 
+" window sizes
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
+
+" GIT
+nmap <leader>gaa :!git add -A; gs<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gl :Glog<CR>
+
 " FuzzyFinder
 map <leader>fb :FufBuffer<Enter>
 map <leader>fs :FufFile<Enter>
@@ -115,8 +130,7 @@ map <leader>Fa :Ack "<c-r><c-w>"<CR>
 map <leader>rm :Rmodel<CR>
 map <leader>rc :Rcontroller<CR>
 map <leader>rv :Rview<CR>
-map <leader>rm :Rmodel<CR>
-map <leader>rs :A<CR>
+map <leader>rs :e db/schema.rb<CR>
 
 " quickly change buffers
 "nnoremap <F5> :buffers<CR>:buffer<Space>

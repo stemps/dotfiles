@@ -28,7 +28,7 @@ export FLEX_SDK_HOME_33=/Users/Shared/FlexSDKs/3.3.0.4852
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 
 # Maven
-export M2_HOME=~/opt/apache-maven-2.2.1
+export M2_HOME=~/opt/apache-maven-3.0.3
 export PATH=$M2_HOME/bin:$PATH
 export MAVEN_OPTS="-Xms512m -Xmx2048m -XX:MaxPermSize=256m"
 
