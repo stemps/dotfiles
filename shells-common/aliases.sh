@@ -15,7 +15,7 @@ alias rt='rake test cucumber:all'
 
 alias bash-reload='. ~/.bashrc'
 alias zsh-reload='. ~/.zshrc'
-alias ea='$EDITOR ~/dotfiles/shells-common/aliases.sh; env_reload'
+alias ea="$EDITOR ~/dotfiles/shells-common/aliases.sh; env_reload"
 
 function env_reload {
   CURRENT_SHELL=`ps | grep "^ *$$" | awk '{ print $4 }'`
@@ -74,6 +74,7 @@ alias mgs="mvn generate-sources"
 alias bbe="ant clean compile package transfer deploy"
 
 # Rails
+alias r='rails'
 alias rs='rails server'
 alias rdb='rails dbconsole'
 alias rco='rails console'

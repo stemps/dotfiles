@@ -1,5 +1,5 @@
 #export EDITOR='mate -w'
-export EDITOR='vi'
+export EDITOR='$HOME/bin/vi'
 
 # enable command line color
 export CLICOLOR=1
