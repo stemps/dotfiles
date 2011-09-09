@@ -7,13 +7,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = http://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/bufexplorer"]
-	path = vim/bundle/bufexplorer
-	url = https://github.com/markabe/bufexplorer.git
-  ignore = untracked
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -47,10 +40,6 @@
 [submodule "vim/bundle/ruby-matchit"]
 	path = vim/bundle/ruby-matchit
 	url = git://github.com/vim-scripts/ruby-matchit.git
-[submodule "vim/bundle/Gundo"]
-	path = vim/bundle/Gundo
-	url = https://github.com/vim-scripts/Gundo.git
-  ignore = untracked
 [submodule "vim/bundle/vim-ruby-refactoring"]
 	path = vim/bundle/vim-ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git

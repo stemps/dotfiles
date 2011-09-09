@@ -1,6 +1,7 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
+let mapleader=","
 " enable pathogen bundle loader
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -89,18 +90,6 @@ nmap <leader>gc :Gcommit<CR>
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gl :Glog<CR>
 
-" FuzzyFinder
-map <leader>fb :FufBuffer<Enter>
-map <leader>fs :FufFile<Enter>
-map <leader>fd :FufDir<Enter>
-map <leader>fc :FufChangeList<Enter>
-map <leader>fq :FufQuickfix<Enter>
-map <leader>fl :FufLine<Enter>
-map <leader>fr :FufRenewCache<Enter>
-map <leader>ft :FufTag<Enter>
-map <leader>fT :FufTagWithCursorWord<Enter>
-let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|public/system'
-
 " Tabularize
 if exists(":Tabularize")
   nmap <Leader>t<Bar> :Tabularize /<Bar><CR>
@@ -131,11 +120,6 @@ map <leader>rm :Rmodel<CR>
 map <leader>rc :Rcontroller<CR>
 map <leader>rv :Rview<CR>
 map <leader>rs :e db/schema.rb<CR>
-
-" quickly change buffers
-"nnoremap <F5> :buffers<CR>:buffer<Space>
-map <F4> <leader>be
-let g:bufExplorerShowRelativePath=1
 
 "Taglist
 nnoremap <silent> <F7> :TlistToggle<CR>
@@ -183,17 +167,6 @@ function! s:align()
 endfunction
 
 
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
-
-"vnoremap ; :
-"vnoremap : ;
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
 " Source the vimrc file after saving it
 if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
@@ -217,4 +190,6 @@ nmap <leader>h :call HexHighlight()<Return>
 " auto-close fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" Command-T auto-refresh
+nmap <leader>t :CommandTFlush<CR>:CommandT<CR>
 
