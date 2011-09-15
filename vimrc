@@ -192,5 +192,5 @@ nmap <leader>h :call HexHighlight()<Return>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Command-T auto-refresh
-nmap <leader>t :CommandTFlush<CR>:CommandT<CR>
+nmap <leader><Leader> :CommandTFlush<CR>:CommandT<CR>
 
