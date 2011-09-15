@@ -84,6 +84,7 @@ alias rmigt='bundle exec rake db:migrate RAILS_ENV=test'
 alias rsd="rails server --debugger"
 alias b="bundle"
 alias be="bundle exec"
+alias bo="bundle open"
 
 # create directory and change into it
 function mcd {
