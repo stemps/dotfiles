@@ -149,6 +149,7 @@ nnoremap <CR> :noh<CR><CR>
 if has("autocmd")
   filetype on 
   autocmd FileType ruby imap <C-l> =><Space>
+  autocmd BufNewFile,BufRead *.thor set syntax=ruby
   autocmd FileType xml,html,python setlocal ts=4 sts=4 sw=4 expandtab
 endif
 
