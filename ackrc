@@ -1,3 +1,4 @@
 --ignore-dir=public/system
 
 --type-add=css=.scss
+--type-add=ruby=.thor
