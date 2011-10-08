@@ -133,15 +133,12 @@ if has("mac") && has("gui")
 endif
 
 " quick changing buffers, windows and tabs
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-map <A-h> :tabprevious<Enter>
-map <A-l> :tabnext<Enter>
-map <a-k> :bp<Enter>
-map <a-j> :bn<Enter>
-map <a-w> :bd<Enter>
+nmap <C-h> 10h
+nmap <C-j> 10j
+nmap <C-k> 10k
+nmap <C-l> 10l
+nmap <A-h> :tabprevious<Enter>
+nmap <A-l> :tabnext<Enter>
 
 " un-highlight current pattern on CR
 nnoremap <CR> :noh<CR><CR>
