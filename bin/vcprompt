@@ -519,7 +519,7 @@ def git(path, string, unknown):
     if not os.path.exists(file):
         return None
 
-    pending_commits = pending_merges = tracked_branch = branch = hash = modified = untracked = unknown
+    pending_commits = pending_merges = tracked_branch = branch = hash = modified = untracked = stashes = unknown
 
     # the current branch is required to get the hash
     if re.search('%(b|r|h)', string):
@@ -577,6 +577,7 @@ def git(path, string, unknown):
             else:
                 untracked = UNTRACKED
 
+    # tracking branch
     if '%t' in string:
         command = 'git config branch.' + branch + '.remote'
         process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
@@ -602,11 +603,14 @@ def git(path, string, unknown):
             tracked_branch = remote + '/' + merge_branch
         else:
             tracked_branch = 'none'
+
     if '%pc' in string or '%pm' in string:
         command = 'git status'
         process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
         output = process.communicate()[0]
         returncode = process.returncode
+
+    #commits ahead in HEAD
     if '%pc' in string:
         if returncode == 0:
             matches = re.search('Your branch is ahead of \'.*\' by (\d+) commits?', output)
@@ -622,6 +626,7 @@ def git(path, string, unknown):
         if pending_commits != '':
             pending_commits = "(+" + pending_commits + ")"
 
+    # commits ahead in tracked branch
     if '%pm' in string:
         if returncode == 0:
             matches = re.search('Your branch is behind \'.*\' by (\d+) commits+, and can be fast-forwarded', output)
@@ -636,6 +641,20 @@ def git(path, string, unknown):
         if pending_merges != '':
             pending_merges = "(+" + pending_merges + ")"
 
+    if '%gs' in string:
+        command = 'git stash list'
+        process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
+        output = process.communicate()[0]
+        returncode = process.returncode
+        if returncode == 0:
+            stashes_count = output.count("\n")
+            if stashes_count > 0:
+                stashes = "{" +  str(stashes_count) + "}"
+            else:
+                stashes = ''
+        else:
+            stashes = ''
+
     # formatting
     string = string.replace('%b', branch)
     string = string.replace('%h', hash)
@@ -647,6 +666,7 @@ def git(path, string, unknown):
     string = string.replace('%n', 'git')
     string = string.replace('%pc', pending_commits)
     string = string.replace('%pm', pending_merges)
+    string = string.replace('%gs', stashes)
     return string
 
 

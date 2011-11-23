@@ -89,7 +89,7 @@ zle -N zle-keymap-select
 # determine VCS info before prompt is loaded. Such that it doesn't have to be recalculated when the prompt is redrawn
 precmd() {
   VIMODE="$NO_COLOR"
-  VCS_INFO="$(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}]%{$NO_COLOR%})"
+  VCS_INFO="$(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$RED%}%gs%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}]%{$NO_COLOR%})"
   RVM_INFO="[$(rvm-prompt i v p g)]"
   if [[ "$RVM_INFO" == "[]" ]] ; then
     RVM_INFO=""
