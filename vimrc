@@ -148,6 +148,7 @@ if has("autocmd")
   autocmd FileType ruby imap <C-l> =><Space>
   autocmd BufNewFile,BufRead *.thor set syntax=ruby
   autocmd FileType xml,html,python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html
 endif
 
 " automatically align cucumber bars (https://gist.github.com/287147)
