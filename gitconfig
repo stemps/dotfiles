@@ -5,5 +5,16 @@
 	diff = auto
 	status = auto
 	branch = auto
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  ch = cherry-pick
+  unstage = reset HEAD
+  oneline = log --format=oneline
+  pullf = pull --ff-only
 [push]
 	default = tracking
