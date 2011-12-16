@@ -101,8 +101,10 @@ if exists(":Tabularize")
 endif
 
 
-" quickly edit .vimrc
-map <leader>v :tabedit $MYVIMRC<Enter><esc>
+" quickly edit .vimrc and other related files
+map <leader>vc :tabedit $MYVIMRC<Enter><esc>
+map <leader>vq :tabedit $HOME/Documents/vim-questions.txt<Enter><esc>
+map <leader>vs :tabedit $HOME/Documents/vim-cheatsheet.txt<Enter><esc>
 
 " NerdTree
 map <leader>nn :NERDTreeToggle<Enter>
@@ -139,6 +141,10 @@ nmap <C-k> 10k
 nmap <C-l> 10l
 nmap <A-h> :tabprevious<Enter>
 nmap <A-l> :tabnext<Enter>
+
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " un-highlight current pattern on CR
 nnoremap <CR> :noh<CR><CR>
