@@ -52,3 +52,6 @@ for file in ${files[@]}
 do
 	chmod u+x $file
 done
+
+# RI options
+export RI="-T --format ansi"
