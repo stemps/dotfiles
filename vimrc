@@ -136,8 +136,8 @@ endif
 
 " quick changing buffers, windows and tabs
 nmap <C-h> 10h
-nmap <C-j> 10j
-nmap <C-k> 10k
+nmap <C-j> 5j
+nmap <C-k> 5k
 nmap <C-l> 10l
 nmap <A-h> :tabprevious<Enter>
 nmap <A-l> :tabnext<Enter>
