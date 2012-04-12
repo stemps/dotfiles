@@ -3,3 +3,4 @@
 --type-add=css=.scss
 --type-add=ruby=.thor
 --type-add=ruby=.feature
+--type-add=ruby=.coffee
