@@ -26,7 +26,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore+=*.o,*.obj,.git,public/system/**
+set wildignore+=*.o,*.obj,.git,public/system/**,tmp
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
@@ -196,5 +196,17 @@ nmap <leader>h :call HexHighlight()<Return>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Command-T auto-refresh
-nmap <leader><Leader> :CommandTFlush<CR>:CommandT<CR>
+map <leader><Leader> :CommandTFlush<CR>:CommandT<CR>
+map <leader>t :CommandTFlush<CR>:CommandT<CR>
+map <leader>ca :CommandTFlush<cr>\|:CommandT app/assets<cr>
+map <leader>cv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>cc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>cm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>ch :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>cl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>cp :CommandTFlush<cr>\|:CommandT public<cr>
+map <leader>cs :CommandTFlush<cr>\|:CommandT spec<cr>
+map <leader>cf :CommandTFlush<cr>\|:CommandT features<cr>
+map <leader>cg :topleft 100 :split Gemfile<cr>
 
+command Ctags !ctags -R --exclude=.git --exclude=log --exclude=public/system --exclude=tmp *
