@@ -9,7 +9,7 @@ export CLICOLOR=1
 export PATH=~/bin:$PATH
 
 # Amazon EC2
-export EC2_HOME="/Users/simons/opt/ec2-api-tools-1.3-46266"
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.5.0.1/jars"
 export EC2_CLOUDWATCH_HOME="/Users/simons/opt/CloudWatch-1.0"
 export MONITORING_HOME=$EC2_CLOUDWATCH_HOME
 export PATH=$PATH:"$EC2_HOME/bin:$EC2_CLOUDWATCH_HOME/bin"
