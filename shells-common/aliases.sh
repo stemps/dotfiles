@@ -43,9 +43,13 @@ alias gpff='git pull --ff-only'
 alias gf='git fetch'
 alias gaa='git add -A; gs'
 alias gb='git branch'
+alias gbrt='gbrt.rb'
 alias gc='git commit -v'
+alias gco='git checkout'
 alias gca='gaa; gc'
 alias gl='git log --pretty=format:"%C(yellow)%ar%Creset [%Cblue%h%Creset] %Cgreen%an%Creset:%Cred%d%Creset %s" --graph'
+alias gla='gl --all --date-order'
+alias glas='gla --simplify-by-decoration'
 alias gll='git log --stat'
 alias glll='git log -p --stat'
 alias gt='git tag'
@@ -66,6 +70,7 @@ alias gdc="git diff --cached"
 alias gd="git diff"
 # push current branch to origin
 alias gpbo='git push origin `current_git_branch` -u'
+alias grh='git reset --hard'
 
 
 # bizsphere
