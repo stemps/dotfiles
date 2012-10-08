@@ -78,6 +78,9 @@ alias bsw="mvn clean install -Dmaven.test.skip=true"
 alias mgs="mvn generate-sources"
 alias bbe="ant clean compile package transfer deploy"
 
+# papersmart
+alias cdp="cd /Users/simons/papersmart/rimini"
+
 # Rails
 alias r='rails'
 alias rs='rails server'
@@ -86,6 +89,8 @@ alias rco='rails console'
 alias rpry='pry -r ./config/environment'
 alias rmigd='bundle exec rake db:migrate RAILS_ENV=development'
 alias rmigt='bundle exec rake db:migrate RAILS_ENV=test'
+alias mig='bundle exec rake db:migrate db:test:prepare'
+alias migredo='bundle exec rake db:migrate:redo db:test:prepare'
 alias rsd="rails server --debugger"
 alias b="bundle"
 alias be="bundle exec"
@@ -96,3 +101,6 @@ function mcd {
   mkdir $1
   cd $1
 }
+
+# vagrant
+alias v='vagrant'

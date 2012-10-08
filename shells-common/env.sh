@@ -55,3 +55,4 @@ done
 
 # RI options
 export RI="-T --format ansi"
+

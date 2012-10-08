@@ -16,5 +16,6 @@
   unstage = reset HEAD
   oneline = log --format=oneline
   pullf = pull --ff-only
+  gup = smart-pull
 [push]
 	default = tracking
