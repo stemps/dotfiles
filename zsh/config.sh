@@ -95,6 +95,12 @@ precmd() {
     RVM_INFO=""
   fi
   RVM_INFO="%{$BLUE%}$RVM_INFO%{$NO_COLOR%}"
+
+  RAILS_ENV_INFO="[$RAILS_ENV]"
+  if [[ "$RAILS_ENV_INFO" == "[]" ]] ; then
+    RAILS_ENV_INFO=""
+  fi
+  RAILS_ENV_INFO="%{$EYELLOW%}$RAILS_ENV_INFO%{$NO_COLOR%}"
 }
 
 preexec(){
@@ -103,7 +109,7 @@ preexec(){
 }
 
 PROMPT='
-%{$CYAN%}[%h]%{$NO_COLOR%} %n:%{$YELLOW%}%~ $VCS_INFO $RVM_INFO
+%{$CYAN%}[%h]%{$NO_COLOR%} %n:%{$YELLOW%}%~ $VCS_INFO $RVM_INFO $RAILS_ENV_INFO
 %{$VIMODE%}→ '
 
 # ctrl-e opens commandline in editor
