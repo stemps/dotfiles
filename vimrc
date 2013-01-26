@@ -23,7 +23,7 @@ set showmode                      " Display the mode you're in.
 set backspace=indent,eol,start    " Intuitive backspacing.
 
 set hidden                        " Handle multiple buffers better.
-
+ 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 set wildignore+=*.o,*.obj,.git,public/system/**,tmp
@@ -118,10 +118,15 @@ map <leader>FA :Ack -Q "<c-r><c-w>"<CR>
 map <leader>Fa :Ack "<c-r><c-w>"<CR>
 
 " Rails Plugin
-map <leader>rm :Rmodel<CR>
-map <leader>rc :Rcontroller<CR>
-map <leader>rv :Rview<CR>
-map <leader>rs :e db/schema.rb<CR>
+"map <leader>rm :Rmodel<CR>
+"map <leader>rc :Rcontroller<CR>
+"map <leader>rv :Rview<CR>
+"map <leader>rs :e db/schema.rb<CR>
+
+" search an replace
+map <leader>ra :%s/<c-r><c-w>//g<Left><Left>
+map <leader>rp :%s/<c-r><c-w>//gc<Left><Left><Left>
+map <leader>rg yiw:Ack -Q "<c-r>""<CR>:Qargs <bar> argdo %s/<c-r>"//gc <bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 "Taglist
 nnoremap <silent> <F7> :TlistToggle<CR>
@@ -211,3 +216,16 @@ map <leader>cf :CommandTFlush<cr>\|:CommandT features<cr>
 map <leader>cg :topleft 100 :split Gemfile<cr>
 
 command Ctags !ctags -R --exclude=.git --exclude=log --exclude=public/system --exclude=tmp *
+
+
+" execute command on quickfix list
+" from http://stackoverflow.com/questions/5686206/search-replace-using-quickfix-list-in-vim/5686810#5686810
+command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(values(buffer_numbers))
+endfunction
