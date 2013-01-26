@@ -1,4 +1,6 @@
 --ignore-dir=public/system
+--ignore-dir=tmp
+--ignore-dir=upload
 
 --type-add=css=.scss
 --type-add=ruby=.thor
