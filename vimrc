@@ -26,7 +26,7 @@ set hidden                        " Handle multiple buffers better.
  
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore+=*.o,*.obj,.git,public/system/**,tmp
+set wildignore+=*.o,*.obj,.git,public/system/**,tmp,upload
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
