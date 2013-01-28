@@ -215,7 +215,7 @@ map <leader>cs :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>cf :CommandTFlush<cr>\|:CommandT features<cr>
 map <leader>cg :topleft 100 :split Gemfile<cr>
 
-command Ctags !ctags -R --exclude=.git --exclude=log --exclude=public/system --exclude=tmp *
+command! Ctags !ctags -R --exclude=.git --exclude=log --exclude=public/system --exclude=tmp *
 
 
 " execute command on quickfix list
