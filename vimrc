@@ -84,6 +84,10 @@ set winheight=5
 set winminheight=5
 set winheight=999
 
+" autosave when focus is lost
+:au FocusLost * silent! wa
+
+
 " GIT
 nmap <leader>gaa :!git add -A; gs<CR>
 nmap <leader>gc :Gcommit<CR>
