@@ -81,6 +81,9 @@ alias bbe="ant clean compile package transfer deploy"
 # papersmart
 alias cdp="cd /Users/simons/papersmart/rimini"
 
+# haystack
+alias cdh="cd /Users/simons/projects/haystack/haystack-app"
+
 # Rails
 alias r='rails'
 alias rs='rails server'
