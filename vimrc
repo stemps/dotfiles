@@ -117,6 +117,10 @@ map <leader>Ff :Ack ""<Left>
 map <leader>FA :Ack -Q "<c-r><c-w>"<CR>
 map <leader>Fa :Ack "<c-r><c-w>"<CR>
 
+" EasyMotion Plugin
+let g:EasyMotion_leader_key = '\'
+
+
 " Rails Plugin
 "map <leader>rm :Rmodel<CR>
 "map <leader>rc :Rcontroller<CR>
