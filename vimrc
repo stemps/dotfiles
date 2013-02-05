@@ -87,6 +87,8 @@ set winheight=999
 " autosave when focus is lost
 :au FocusLost * silent! wa
 
+" go to end of selection after yank
+vmap y ygv<Esc>
 
 " GIT
 nmap <leader>gaa :!git add -A; gs<CR>
