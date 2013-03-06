@@ -88,6 +88,7 @@
 [submodule "vim/bundle/snipmate-snippets"]
 	path = vim/bundle/snipmate-snippets
 	url = https://github.com/scrooloose/snipmate-snippets.git
+  ignore = dirty
 [submodule "vim/bundle/you_complete_me"]
 	path = vim/bundle/you_complete_me
 	url = https://github.com/Valloric/YouCompleteMe
