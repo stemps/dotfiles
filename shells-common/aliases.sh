@@ -63,7 +63,7 @@ alias gcw='git checkout work'
 alias gmw='git merge work'
 alias gmm='git merge master'
 alias gxmlb='git checkout contentnuggets/lib/xmlbeans-generated.jar'
-alias gpom='git pull origin master'
+alias gphm='git push heroku master'
 #alias grma='for x in `git status | grep deleted | awk \'{print $3}\'`; do git rm $x; done'
 alias gcp="git cherry-pick"
 alias gdc="git diff --cached"
@@ -79,7 +79,7 @@ alias mgs="mvn generate-sources"
 alias bbe="ant clean compile package transfer deploy"
 
 # papersmart
-alias cdp="cd /Users/simons/papersmart/rimini"
+alias cdp="cd /Users/simons/projects/papersmart/papersmart"
 
 # haystack
 alias cdh="cd /Users/simons/projects/haystack/haystack-app"
