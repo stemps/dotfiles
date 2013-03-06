@@ -85,7 +85,10 @@ set winminheight=5
 set winheight=999
 
 " autosave when focus is lost
-:au FocusLost * silent! wa
+" :au FocusLost * silent! wa
+
+" Syntastic
+let g:syntastic_ruby_exec = '/Users/simons/.rvm/rubies/ruby-1.9.3-p194/bin/ruby'
 
 " go to end of selection after yank
 vmap y ygv<Esc>
@@ -126,6 +129,8 @@ map <leader>Fa :Ack "<c-r><c-w>"<CR>
 " EasyMotion Plugin
 let g:EasyMotion_leader_key = '\'
 
+let g:ycm_key_select_completion = ''
+" let g:snips_trigger_key = '<c-Space>'
 
 " Rails Plugin
 "map <leader>rm :Rmodel<CR>
@@ -167,10 +172,11 @@ nnoremap <CR> :noh<CR><CR>
 if has("autocmd")
   filetype on 
   autocmd FileType ruby imap <C-l> =><Space>
-  autocmd BufNewFile,BufRead *.thor set syntax=ruby
-  autocmd BufNewFile,BufRead *.arb set syntax=ruby
+  autocmd BufNewFile,BufRead *.thor set filetype=ruby
+  autocmd BufNewFile,BufRead *.arb set filetype=ruby
   autocmd FileType xml,html,python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html
+  autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.ruby-rspec 
 endif
 
 " automatically align cucumber bars (https://gist.github.com/287147)
@@ -189,9 +195,9 @@ endfunction
 
 
 " Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
+" if has("autocmd")
+"   autocmd bufwritepost .vimrc source $MYVIMRC
+" endif
 
 "NERDtree defaults
 let NERDTreeHijackNetrw=0
