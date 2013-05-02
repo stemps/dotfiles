@@ -8,6 +8,9 @@ export CLICOLOR=1
 # local bin
 export PATH=~/bin:$PATH
 
+# homebrew sbin
+export PATH=/usr/local/sbin:$PATH
+
 # Amazon EC2
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.5.0.1/jars"
 export EC2_CLOUDWATCH_HOME="/Users/simons/opt/CloudWatch-1.0"
@@ -55,4 +58,8 @@ done
 
 # RI options
 export RI="-T --format ansi"
+
+#NodeJS
+export PATH=$PATH:/usr/local/share/npm/bin
+export NODE_PATH="/usr/local/lib/node"
 

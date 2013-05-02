@@ -6,8 +6,8 @@ alias mvnecl='mvn eclipse:clean eclipse:eclipse'
 alias mvnecls='mvn eclipse:clean eclipse:eclipse -DdownloadSources=true'
 
 # Amazon
-alias ec2conn='ssh -i /Volumes/bizsphere/.ec2/bizsphere.pem -l root'
-alias ec2cp='scp -i /Volumes/bizsphere/.ec2/bizsphere.pem '
+alias ec2conn='ssh -i /Users/simons/projects/bizsphere/.ec2/bizsphere.pem -l root'
+alias ec2cp='scp -i /Users/simons/projects/bizsphere/.ec2/bizsphere.pem '
 
 # rake / rails / ruby
 alias rt='rake test cucumber:all'
