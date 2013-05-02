@@ -19,3 +19,5 @@
   gup = smart-pull
 [push]
 	default = tracking
+[github]
+	user = stemps
