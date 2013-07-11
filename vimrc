@@ -245,3 +245,6 @@ function! QuickfixFilenames()
   endfor
   return join(values(buffer_numbers))
 endfunction
+
+" multi cursor
+let g:multi_cursor_start_key='<C-s>'
