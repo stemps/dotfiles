@@ -63,3 +63,6 @@ export RI="-T --format ansi"
 export PATH=$PATH:/usr/local/share/npm/bin
 export NODE_PATH="/usr/local/lib/node"
 
+# load z command
+. `brew --prefix`/etc/profile.d/z.sh
+
