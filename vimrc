@@ -72,7 +72,8 @@ if has("mac") && has("gui")
 endif
 
 " Theme
-colorscheme solarized
+colorscheme railscasts
+"colorscheme solarized
 "colorscheme molokai
 
 " window sizes

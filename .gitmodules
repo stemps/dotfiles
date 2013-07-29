@@ -109,3 +109,9 @@
 	path = vim/bundle/multiple-cursors
 	url = git://github.com/terryma/vim-multiple-cursors.git
   ignore = untracked
+[submodule "vim/bundle/railscasts-theme"]
+	path = vim/bundle/railscasts-theme
+	url = https://github.com/jpo/vim-railscasts-theme
+[submodule "vim/bundle/vim-elixir"]
+	path = vim/bundle/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
