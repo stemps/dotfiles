@@ -65,7 +65,7 @@ set cursorline
 " }}}
 " Appearance ------------------------------------------------------------- {{{
 
-set guifont=Inconsolata-dz:h12
+set guifont=Inconsolata-dz\ for\ Powerline:h12
 set guioptions=m	" hide top menu bar
 
 if has("mac") && has("gui")
@@ -137,7 +137,7 @@ set foldtext=MyFoldText()
 
 " Syntastic -------------------------------------------------------------- {{{
 
-let g:syntastic_ruby_exec = '/Users/simons/.rvm/rubies/ruby-1.9.3-p194/bin/ruby'
+let g:syntastic_ruby_exec = '/Users/simons/.rvm/rubies/ruby-1.9.3-p392/bin/ruby'
 
 " }}}
 " NerdTree --------------------------------------------------------------- {{{
@@ -203,6 +203,11 @@ map <leader>cg :topleft 100 :split Gemfile<cr>
 " auto-close fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+nmap <leader>gaa :!git add -A; gs<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gl :Glog<CR>
+
 " }}}
 " CTags  ----------------------------------------------------------------- {{{
 
@@ -210,14 +215,11 @@ command! Ctags !ctags -R --exclude=.git --exclude=log --exclude=public/system --
 
 " }}}
 
+" Powerline  ------------------------------------------------------------- {{{
+
+set rtp+=/Users/simons/dotfiles/vim/bundle/powerline/powerline/bindings/vim
+
 " }}}
-" GIT -------------------------------------------------------------------- {{{
-
-nmap <leader>gaa :!git add -A; gs<CR>
-nmap <leader>gc :Gcommit<CR>
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gl :Glog<CR>
-
 " }}}
 " Tabularize ------------------------------------------------------------- {{{
 
