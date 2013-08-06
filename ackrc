@@ -1,6 +1,10 @@
 --ignore-dir=public/system
+--ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=upload
+--ignore-dir=db/sphinx
+
+--ignore-file=is:tags
 
 --type-add=css=.scss
 --type-add=ruby=.thor
