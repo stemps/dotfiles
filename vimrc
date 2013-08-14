@@ -296,9 +296,11 @@ if has("autocmd")
   autocmd FileType ruby imap <C-l> =><Space>
   autocmd BufNewFile,BufRead *.thor set filetype=ruby
   autocmd BufNewFile,BufRead *.arb set filetype=ruby
-  autocmd FileType xml,html,python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd BufNewFile,BufRead Guardfile set filetype=ruby
   autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html
   autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.ruby-rspec 
+
+  autocmd FileType xml,html,python setlocal ts=4 sts=4 sw=4 expandtab
 endif
 
 " VIM -------------------------------------------------------------------- {{{
