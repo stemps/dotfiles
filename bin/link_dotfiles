@@ -1,0 +1,15 @@
+#!/bin/sh
+
+ln -s ~/dotfiles/bin ~
+ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/vim ~/.vim
+ln -s ~/dotfiles/slate ~/.slate
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/pow ~/.pow
+ln -s ~/dotfiles/pentadactyl ~/.pentadactyl
+ln -s ~/dotfiles/pentadactylrc ~/.pentadactylrc
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
+ln -s ~/dotfiles/irbrc ~/.irbrc
+ln -s ~/dotfiles/ackrc ~/.ackrc
+ln -s ~/dotfiles/bashrc ~/.bashrc
