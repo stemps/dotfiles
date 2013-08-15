@@ -8,8 +8,8 @@ export CLICOLOR=1
 # local bin
 export PATH=~/bin:$PATH
 
-# homebrew sbin
-export PATH=/usr/local/sbin:$PATH
+# homebrew 
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Amazon EC2
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.5.0.1/jars"
