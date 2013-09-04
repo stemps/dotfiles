@@ -124,3 +124,6 @@
 	path = vim/bundle/yankring
 	url = https://github.com/vim-scripts/YankRing.vim.git
   ignore = untracked
+[submodule "vim/bundle/vim-dispatch"]
+	path = vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git

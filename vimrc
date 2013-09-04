@@ -230,6 +230,11 @@ nmap <leader>yr :YRShow<CR>
 set rtp+=/Users/simons/dotfiles/vim/bundle/powerline/powerline/bindings/vim
 
 " }}}
+" vim-dispatch------------------------------------------------------------ {{{
+
+nmap <leader>m :Make<CR>
+
+" }}}
 
 " }}}
 " Tabularize ------------------------------------------------------------- {{{
@@ -302,17 +307,9 @@ nnoremap <CR> :noh<CR><CR>
 " }}}
 " File Types ------------------------------------------------------------- {{{
 
-if has("autocmd")
-  filetype on 
-  autocmd FileType ruby imap <C-l> =><Space>
-  autocmd BufNewFile,BufRead *.thor set filetype=ruby
-  autocmd BufNewFile,BufRead *.arb set filetype=ruby
-  autocmd BufNewFile,BufRead Guardfile set filetype=ruby
-  autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html
-  autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.ruby-rspec 
+filetype on 
 
-  autocmd FileType xml,html,python setlocal ts=4 sts=4 sw=4 expandtab
-endif
+autocmd FileType xml,html,python setlocal ts=4 sts=4 sw=4 expandtab
 
 " VIM -------------------------------------------------------------------- {{{
 
@@ -323,6 +320,7 @@ augroup ft_vim
 augroup END
 
 " }}}
+" Cucumber---------------------------------------------------------------- {{{
 
 " automatically align cucumber bars (https://gist.github.com/287147)
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
@@ -337,6 +335,23 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+
+" }}}
+" Ruby ------------------------------------------------------------------- {{{
+
+autocmd FileType ruby imap <C-l> =><Space>
+autocmd BufNewFile,BufRead *.thor set filetype=ruby
+autocmd BufNewFile,BufRead *.arb set filetype=ruby
+autocmd BufNewFile,BufRead Guardfile set filetype=ruby
+autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html
+
+" }}}
+" RSpec ------------------------------------------------------------------ {{{
+
+autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.ruby-rspec 
+autocmd FileType ruby.ruby-rspec setlocal makeprg=rspec\ -r\ $HOME/.vim/ruby/vim-rspec2-formatter.rb\ -f\ VimFormatter\ \"%:p\"
+
+" }}}
 
 " }}}
 " Hex Colors ------------------------------------------------------------- {{{
