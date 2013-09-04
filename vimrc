@@ -220,12 +220,17 @@ let g:ctrlp_custom_ignore = {
 
 
 " }}}
+" YankRing --------------------------------------------------------------- {{{
 
+nmap <leader>yr :YRShow<CR>
+
+" }}}
 " Powerline  ------------------------------------------------------------- {{{
 
 set rtp+=/Users/simons/dotfiles/vim/bundle/powerline/powerline/bindings/vim
 
 " }}}
+
 " }}}
 " Tabularize ------------------------------------------------------------- {{{
 
