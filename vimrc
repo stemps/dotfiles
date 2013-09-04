@@ -28,7 +28,8 @@ set hidden                        " Handle multiple buffers better.
  
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore+=*.o,*.obj,.git,public/system/**,tmp,upload
+set wildignore+=*.o,*.obj
+" set wildignore+=*.o,*.obj,.git,public/system/**,tmp,upload
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
@@ -189,7 +190,7 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 
 nmap <leader>gaa :!git add -A; gs<CR>
 nmap <leader>gc :Gcommit<CR>
-nmap <leader>gs :Gstatus<CR>
+nmap <leader>gs :Gstatus<CR><C-w>20+
 nmap <leader>gl :Glog<CR>
 
 " }}}
@@ -202,7 +203,6 @@ command! Ctags !ctags -R --exclude=.git --exclude=log --exclude=public/system --
 
 let g:ctrlp_map = '<leader><leader>'
 let g:ctrlp_cmd = 'CtrlP'
-set wildignore+=*.o,*.obj,.git,public/system/**,tmp,upload
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|public\/system$\|tmp$\|upload$',
