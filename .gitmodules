@@ -118,3 +118,7 @@
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
 	url = https://github.com/Lokaltog/powerline.git
+[submodule "vim/bundle/vim-bundler"]
+       path = vim/bundle/vim-bundler
+       url = https://github.com/tpope/vim-bundler.git
+
