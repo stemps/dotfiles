@@ -182,22 +182,6 @@ nnoremap <silent> <F7> :TlistToggle<CR>
 let g:multi_cursor_start_key='<C-s>'
 
 " }}}
-" Command T -------------------------------------------------------------- {{{
-
-map <leader><Leader> :CommandTFlush<CR>:CommandT<CR>
-map <leader>t :CommandTFlush<CR>:CommandT<CR>
-map <leader>ca :CommandTFlush<cr>\|:CommandT app/assets<cr>
-map <leader>cv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>cc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>cm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>ch :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>cl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>cp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>cs :CommandTFlush<cr>\|:CommandT spec<cr>
-map <leader>cf :CommandTFlush<cr>\|:CommandT features<cr>
-map <leader>cg :topleft 100 :split Gemfile<cr>
-
-" }}}
 " Fugitive --------------------------------------------------------------- {{{
 
 " auto-close fugitive buffers
@@ -212,6 +196,19 @@ nmap <leader>gl :Glog<CR>
 " CTags  ----------------------------------------------------------------- {{{
 
 command! Ctags !ctags -R --exclude=.git --exclude=log --exclude=public/system --exclude=tmp *
+
+" }}}
+" CtrlP  ----------------------------------------------------------------- {{{
+
+let g:ctrlp_map = '<leader><leader>'
+let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*.o,*.obj,.git,public/system/**,tmp,upload
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|public\/system$\|tmp$\|upload$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+
 
 " }}}
 
