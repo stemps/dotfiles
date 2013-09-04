@@ -63,6 +63,8 @@ set mouse=a
 " highlight current line
 set cursorline
 
+set lazyredraw
+
 " }}}
 " Appearance ------------------------------------------------------------- {{{
 
@@ -192,6 +194,13 @@ nmap <leader>gaa :!git add -A; gs<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gs :Gstatus<CR><C-w>20+
 nmap <leader>gl :Glog<CR>
+
+" }}}
+" GitV ------------------------------------------------------------------- {{{
+
+nmap <leader>gv :Gitv --all<cr>
+nmap <leader>gV :Gitv! --all<cr>
+vmap <leader>gV :Gitv! --all<cr>
 
 " }}}
 " CTags  ----------------------------------------------------------------- {{{
