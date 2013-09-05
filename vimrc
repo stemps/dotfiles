@@ -230,9 +230,15 @@ nmap <leader>yr :YRShow<CR>
 set rtp+=/Users/simons/dotfiles/vim/bundle/powerline/powerline/bindings/vim
 
 " }}}
-" vim-dispatch------------------------------------------------------------ {{{
+" vim-dispatch ----------------------------------------------------------- {{{
 
 nmap <leader>m :Make<CR>
+
+" }}}
+" quickfixsigns ---------------------------------------------------------- {{{
+
+" default: ['qfl', 'loc', 'marks', 'vcsdiff', 'breakpoints']
+let g:quickfixsigns_classes = ['qfl', 'loc', 'vcsdiff', 'breakpoints']
 
 " }}}
 
