@@ -241,8 +241,6 @@ nmap <leader>m :Make<CR>
 let g:quickfixsigns_classes = ['qfl', 'loc', 'vcsdiff', 'breakpoints']
 
 " }}}
-
-" }}}
 " Tabularize ------------------------------------------------------------- {{{
 
 if exists(":Tabularize")
@@ -253,6 +251,8 @@ if exists(":Tabularize")
   nmap <Leader>t= :Tabularize /=\zs<CR>
   vmap <Leader>t= :Tabularize /=\zs<CR>
 endif
+
+" }}}
 
 " }}}
 " Quick Edits ------------------------------------------------------------ {{{
@@ -309,6 +309,13 @@ vmap y ygv<Esc>
 " Highlighting ----------------------------------------------------------- {{{
 
 nnoremap <CR> :noh<CR><CR>
+
+" }}}
+" Quickfix list ----------------------------------------------------------- {{{
+
+" clear the quickfix list
+com! Clfx call setqflist([])
+nmap <leader>qc :Clfx<cr>:copen<cr>:cclose<cr>
 
 " }}}
 " File Types ------------------------------------------------------------- {{{
