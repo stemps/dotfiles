@@ -142,6 +142,9 @@ set foldtext=MyFoldText()
 
 let g:syntastic_ruby_exec = '/Users/simons/.rvm/rubies/ruby-1.9.3-p392/bin/ruby'
 
+" tell ruby not to output warnings. They have too many false positives
+let g:syntastic_ruby_mri_args='-T1 -c'
+
 " }}}
 " NerdTree --------------------------------------------------------------- {{{
 
