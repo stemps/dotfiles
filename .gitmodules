@@ -28,7 +28,7 @@
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
-	url = git@github.com:stemps/vim-rails.git
+	url = https://github.com/tpope/vim-rails.git
 [submodule "vim/bundle/ruby-matchit"]
 	path = vim/bundle/ruby-matchit
 	url = git://github.com/vim-scripts/ruby-matchit.git
