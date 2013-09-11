@@ -267,8 +267,8 @@ map <leader>vs :tabedit $HOME/Documents/vim-cheatsheet.txt<Enter><esc>
 " }}}
 " Search and replace ----------------------------------------------------- {{{
  
-map <leader>ra :%s/<c-r><c-w>//g<Left><Left>
-map <leader>rp :%s/<c-r><c-w>//gc<Left><Left><Left>
+map <leader>ra :%s/<c-r><c-w>/<c-r><c-w>/g<Left><Left>
+map <leader>rp :%s/<c-r><c-w>/<c-r><c-w>/gc<Left><Left><Left>
 map <leader>rg yiw:Ack -Q "<c-r>""<CR>:Qargs <bar> argdo %s/<c-r>"//gc <bar> update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 " execute command on quickfix list
