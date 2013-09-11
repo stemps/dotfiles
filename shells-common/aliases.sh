@@ -72,6 +72,7 @@ alias gd="git diff"
 alias gpbo='git push origin `current_git_branch` -u'
 alias grh='git reset --hard'
 alias oops='gaa; gc --amend'
+alias gsta='git stash --include-untracked'
 
 
 # bizsphere
