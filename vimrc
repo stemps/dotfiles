@@ -256,6 +256,16 @@ if exists(":Tabularize")
 endif
 
 " }}}
+" VIM-Rspec -------------------------------------------------------------- {{{
+
+let g:rspec_command = "Dispatch rspec -f documentation {spec}"
+
+map <Leader>sf :call RunCurrentSpecFile()<CR>
+map <Leader>ss :call RunNearestSpec()<CR>
+map <Leader>sl :call RunLastSpec()<CR>
+map <Leader>sa :call RunAllSpecs()<CR>
+
+" }}}
 
 " }}}
 " Quick Edits ------------------------------------------------------------ {{{
@@ -365,7 +375,6 @@ autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html
 " RSpec ------------------------------------------------------------------ {{{
 
 autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.ruby-rspec 
-autocmd FileType ruby.ruby-rspec setlocal makeprg=rspec\ -r\ $HOME/.vim/ruby/vim-rspec2-formatter.rb\ -f\ VimFormatter\ \"%:p\"
 
 " }}}
 
