@@ -90,12 +90,13 @@ zle -N zle-keymap-select
 precmd() {
   VIMODE="$NO_COLOR"
   VCS_INFO="$(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$RED%}%gs%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}]%{$NO_COLOR%})"
-  RVM_INFO="[$(rvm-prompt i v p g)]"
+  if (( $+commands[rvm-prompt] )) ; then
+    RVM_INFO="[$(rbenv version-name)]"
+  fi
   if [[ "$RVM_INFO" == "[]" ]] ; then
     RVM_INFO=""
   fi
   RVM_INFO="%{$BLUE%}$RVM_INFO%{$NO_COLOR%}"
-
   RAILS_ENV_INFO="[$RAILS_ENV]"
   if [[ "$RAILS_ENV_INFO" == "[]" ]] ; then
     RAILS_ENV_INFO=""
