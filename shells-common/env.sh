@@ -20,7 +20,7 @@ export PATH=$PATH:"$EC2_HOME/bin:$EC2_CLOUDWATCH_HOME/bin"
 
 # MySQL
 export PATH=$PATH:"/usr/local/mysql/bin"
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+# export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
 # Flash
 export PATH=$PATH:"/Applications/Adobe Flash Builder Beta 2/Player/mac/Flash Player.app/Contents/MacOS"
@@ -66,3 +66,5 @@ export NODE_PATH="/usr/local/lib/node"
 # load z command
 . `brew --prefix`/etc/profile.d/z.sh
 
+# fix OSX updated ssl certs
+SSL_CERT_FILE="/usr/local/etc/openssl/certs/cert.pem"
