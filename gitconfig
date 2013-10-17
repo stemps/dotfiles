@@ -21,3 +21,5 @@
 	default = tracking
 [github]
 	user = stemps
+[credential]
+	helper = osxkeychain
