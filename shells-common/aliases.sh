@@ -109,3 +109,6 @@ function mcd {
 
 # vagrant
 alias v='vagrant'
+
+# Tmux (shamelessly stolen from Moritz Breit at https://github.com/mbreit/dotfiles/blob/master/zsh/.zshrc)
+alias t='tmux attach -t $PWD:t || tmux new -s $PWD:t'
