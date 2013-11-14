@@ -221,6 +221,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
+" Do not try to be smart when determining the working directory. Use the
+" actual vim working directory instead.
+let g:ctrlp_working_path_mode = '0'
 
 " }}}
 " YankRing --------------------------------------------------------------- {{{
