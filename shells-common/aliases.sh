@@ -112,3 +112,6 @@ alias v='vagrant'
 
 # Tmux (shamelessly stolen from Moritz Breit at https://github.com/mbreit/dotfiles/blob/master/zsh/.zshrc)
 alias t='tmux attach -t $PWD:t || tmux new -s $PWD:t'
+
+# Workaround for Tmux / Macvim / Clipboard issue
+alias mvim="reattach-to-user-namespace mvim"
