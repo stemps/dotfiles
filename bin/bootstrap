@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Script draft for bootstrapping a new mac. It's not intended to be complete,
+# but rather contain the things that are special that I would otherwise forget
+
+# install macvim and clipboard workaround for tmux
+brew install macvim --override-system-vim
+brew install reattach-to-user-namespace --wrap-pbcopy-and-pbpaste
+
+
+
