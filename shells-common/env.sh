@@ -65,6 +65,3 @@ export NODE_PATH="/usr/local/lib/node"
 
 # load z command
 . `brew --prefix`/etc/profile.d/z.sh
-
-# fix OSX updated ssl certs
-SSL_CERT_FILE="/usr/local/etc/openssl/certs/cert.pem"
