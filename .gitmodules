@@ -134,3 +134,6 @@
 [submodule "vim/bundle/emmet-vim"]
 	path = vim/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vim/bundle/textobj-word-column"]
+	path = vim/bundle/textobj-word-column
+	url = https://github.com/coderifous/textobj-word-column.vim.git
