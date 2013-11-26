@@ -137,3 +137,6 @@
 [submodule "vim/bundle/textobj-word-column"]
 	path = vim/bundle/textobj-word-column
 	url = https://github.com/coderifous/textobj-word-column.vim.git
+[submodule "vim/bundle/php-indent"]
+	path = vim/bundle/php-indent
+	url = https://github.com/captbaritone/better-indent-support-for-php-with-html.git
