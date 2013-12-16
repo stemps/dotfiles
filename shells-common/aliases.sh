@@ -101,6 +101,7 @@ alias rsd="rails server --debugger"
 alias b="bundle"
 alias be="bundle exec"
 alias bo="bundle open"
+alias ze="zeus"
 
 # create directory and change into it
 function mcd {
