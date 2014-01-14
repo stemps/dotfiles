@@ -261,7 +261,9 @@ endif
 " }}}
 " VIM-Rspec -------------------------------------------------------------- {{{
 
-let g:rspec_command = "Dispatch rspec -f documentation {spec}"
+let g:rspec_command = "compiler rspec | Make -f documentation {spec}"
+
+autocmd User BufEnterRails let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec -f documentation {spec}"
 
 map <Leader>sf :call RunCurrentSpecFile()<CR>
 map <Leader>ss :call RunNearestSpec()<CR>
