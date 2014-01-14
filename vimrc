@@ -208,7 +208,7 @@ vmap <leader>gV :Gitv! --all<cr>
 " }}}
 " CTags  ----------------------------------------------------------------- {{{
 
-command! Ctg !ctags -R --exclude=.git --exclude=log --exclude=public/system --exclude=tmp --exclude=log *
+command! Ctg !/usr/local/bin/ctags -R --exclude=.git --exclude=log --exclude=public/system --exclude=tmp --exclude=log *
 
 " }}}
 " CtrlP  ----------------------------------------------------------------- {{{
