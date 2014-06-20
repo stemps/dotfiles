@@ -65,3 +65,12 @@ export NODE_PATH="/usr/local/lib/node"
 
 # load z command
 . `brew --prefix`/etc/profile.d/z.sh
+
+# Work around locale issue in Mac OS (or iterm)
+export LC_CTYPE=en_US.UTF-8
+
+# Node JS
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+
+# Autoenv
+[[ -f /usr/local/opt/autoenv/activate.sh ]] && source /usr/local/opt/autoenv/activate.sh
