@@ -263,6 +263,8 @@ endif
 
 let g:rspec_command = "compiler rspec | Make -f documentation {spec}"
 
+autocmd User BufEnterRails let g:rspec_command = "compiler rspec | set makeprg=bin/rspec | Make -f documentation {spec}"
+
 map <Leader>sf :call RunCurrentSpecFile()<CR>
 map <Leader>ss :call RunNearestSpec()<CR>
 map <Leader>sl :call RunLastSpec()<CR>
