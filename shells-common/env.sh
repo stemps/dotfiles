@@ -1,5 +1,5 @@
 #export EDITOR='mate -w'
-export EDITOR='$HOME/bin/vi'
+export EDITOR='vi'
 export BUNDLER_EDITOR='$HOME/bin/mvim'
 
 # enable command line color
