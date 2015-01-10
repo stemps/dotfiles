@@ -68,7 +68,7 @@ set lazyredraw
 " }}}
 " Appearance ------------------------------------------------------------- {{{
 
-set guifont="Inconsolata-dz\ for\ Powerline:h12"
+set guifont=Inconsolata-dz\ for\ Powerline:h12
 set guioptions=m	" hide top menu bar
 
 if has("mac") && has("gui")
