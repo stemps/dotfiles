@@ -1,15 +1,52 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
-" Pathogen --------------------------------------------------------------- {{{
+" Vundle ----------------------------------------------------------------- {{{
+set nocompatible              
+filetype off                 
 
-let mapleader=","
-" enable pathogen bundle loader
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'stemps/vim-railscasts.git'
+Plugin 'fugitive.vim'
+Plugin 'ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'snipmate-snippets'
+Plugin 'Tabular'
+Plugin 'cucumber.zip'
+Plugin 'endwise.vim'
+Plugin 'rails.vim'
+Plugin 'ruby-matchit'
+Plugin 'ecomba/vim-ruby-refactoring.git'
+Plugin 'surround.vim'
+Plugin 'html-improved-indentation'
+Plugin 'Haml'
+Plugin 'unimpaired.vim'
+Plugin 'simple-pairs'
+Plugin 'commentary.vim'
+Plugin 'vim-coffee-script'
+Plugin 'Syntastic'
+Plugin 'EasyMotion'
+Plugin 'tlib'
+Plugin 'ctrlp.vim'
+Plugin 'tpope/vim-dispatch.git'
+Plugin 'quickfixsigns'
+Plugin 'ruby.vim'
+Plugin 'mattn/emmet-vim.git'
+Plugin 'Vim-Rspec'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+
+call vundle#end()
+filetype plugin indent on
+
 
 " }}}
 " Basic options ---------------------------------------------------------- {{{
+
+let mapleader=","
 
 set nostartofline                 " Remeber cursor column after buffer switch
 set nocompatible                  " Must come first because it changes other options.
