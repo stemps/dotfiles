@@ -49,6 +49,8 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=/tmp//,.  " Keep swap files in one location
 
+set previewheight=20
+
 " UNCOMMENT TO USE
 set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
@@ -193,10 +195,13 @@ let g:multi_cursor_start_key='<C-s>'
 " auto-close fugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-nmap <leader>gaa :!git add -A; gs<CR>
+nmap <leader>gaa :!git add -A; git status<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gs :Gstatus<CR><C-w>20+
 nmap <leader>gl :Glog<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>dg :diffget<CR>
+nmap <leader>dp :diffput<CR>
 
 " }}}
 " GitV ------------------------------------------------------------------- {{{
