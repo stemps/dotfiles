@@ -37,6 +37,9 @@ Plugin 'ruby.vim'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'Vim-Rspec'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'ragtag.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'hexHighlight.vim'
 
 
 call vundle#end()
@@ -382,7 +385,7 @@ nmap <leader>qc :Clfx<cr>:copen<cr>:cclose<cr>
 
 filetype on 
 
-autocmd FileType xml,html,python setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType xml,python setlocal ts=4 sts=4 sw=4 expandtab
 
 " VIM -------------------------------------------------------------------- {{{
 
