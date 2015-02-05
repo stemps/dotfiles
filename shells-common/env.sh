@@ -1,6 +1,6 @@
 #export EDITOR='mate -w'
-export EDITOR='vi'
-export BUNDLER_EDITOR='vi'
+export EDITOR='vim'
+export BUNDLER_EDITOR='vim'
 
 # enable command line color
 export CLICOLOR=1
