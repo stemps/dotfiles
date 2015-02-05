@@ -4,6 +4,7 @@
 --ignore-dir=upload
 --ignore-dir=db/sphinx
 --ignore-dir=.gems
+--ignore-dir=fixtures/vcr-cassettes
 
 --ignore-file=is:tags
 
