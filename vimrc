@@ -373,6 +373,9 @@ vmap y ygv<Esc>
 
 nnoremap <CR> :noh<CR><CR>
 
+:set colorcolumn=+1
+:highlight ColorColumn ctermbg=lightgrey guibg=#222222
+
 " }}}
 " Quickfix list ----------------------------------------------------------- {{{
 
@@ -416,6 +419,7 @@ endfunction
 " Ruby ------------------------------------------------------------------- {{{
 
 autocmd FileType ruby imap <C-l> =><Space>
+autocmd FileType ruby set textwidth=100
 autocmd BufNewFile,BufRead *.thor set filetype=ruby
 autocmd BufNewFile,BufRead *.arb set filetype=ruby
 autocmd BufNewFile,BufRead Guardfile set filetype=ruby
