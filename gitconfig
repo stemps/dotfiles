@@ -1,6 +1,6 @@
 [user]
 	name = Simon Stemplinger
-	email = simon@simon-stemplinger.com
+	email = simon@stem.ps
 [color]
 	diff = auto
 	status = auto
@@ -23,3 +23,7 @@
 	user = stemps
 [credential]
 	helper = osxkeychain
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
