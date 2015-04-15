@@ -40,6 +40,7 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'ragtag.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'hexHighlight.vim'
+Plugin 'rizzatti/dash.vim'
 
 
 call vundle#end()
@@ -180,6 +181,8 @@ set foldtext=MyFoldText()
 " }}}
 " Plugins ---------------------------------------------------------------- {{{
 
+:nmap <silent> <leader>d <Plug>DashSearch
+:nmap <silent> <leader>D <Plug>DashGlobalSearch
 " Syntastic -------------------------------------------------------------- {{{
 
 let g:syntastic_ruby_exec = '/Users/simons/.rvm/rubies/ruby-2.0.0-p247/bin/ruby'
