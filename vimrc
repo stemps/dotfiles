@@ -41,7 +41,8 @@ Plugin 'ragtag.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'hexHighlight.vim'
 Plugin 'rizzatti/dash.vim'
-
+Plugin 'YankRing.vim'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 filetype plugin indent on
