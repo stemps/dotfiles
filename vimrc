@@ -124,9 +124,9 @@ if has("mac") && has("gui")
 endif
 
 " Theme
-colorscheme railscasts
-"colorscheme solarized
-"colorscheme molokai
+" colorscheme railscasts
+" colorscheme solarized
+colorscheme molokai
 
 " window sizes
 set winwidth=84
