@@ -17,6 +17,7 @@
   oneline = log --format=oneline
   pullf = pull --ff-only
   gup = smart-pull
+	ctags = !.git/hooks/ctags
 [push]
 	default = tracking
 [github]
@@ -27,3 +28,5 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+[init]
+	templatedir = ~/.git_template

@@ -255,11 +255,6 @@ nmap <leader>gV :Gitv! --all<cr>
 vmap <leader>gV :Gitv! --all<cr>
 
 " }}}
-" CTags  ----------------------------------------------------------------- {{{
-
-command! Ctg !/usr/local/bin/ctags -R --exclude=.git --exclude=log --exclude=public/system --exclude=tmp --exclude=log *
-
-" }}}
 " CtrlP  ----------------------------------------------------------------- {{{
 
 let g:ctrlp_map = '<leader><leader>'
