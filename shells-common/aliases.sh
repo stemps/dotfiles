@@ -114,6 +114,7 @@ alias v='vagrant'
 
 # Tmux (shamelessly stolen from Moritz Breit at https://github.com/mbreit/dotfiles/blob/master/zsh/.zshrc)
 alias t='SESSION_NAME=`echo $PWD:t|sed s/\\\./-/g` ;tmux attach -t $SESSION_NAME || tmux new -s $SESSION_NAME'''
+alias tvim='tmux splitw -h -p 70 "vim"'
 
 # Workaround for Tmux / Macvim / Clipboard issue
 alias mvim="reattach-to-user-namespace mvim"
