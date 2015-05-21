@@ -186,8 +186,6 @@ set foldtext=MyFoldText()
 :nmap <silent> <leader>D <Plug>DashGlobalSearch
 " Syntastic -------------------------------------------------------------- {{{
 
-let g:syntastic_ruby_exec = '/Users/simons/.rvm/rubies/ruby-2.0.0-p247/bin/ruby'
-
 " tell ruby not to output warnings. They have too many false positives
 let g:syntastic_ruby_mri_args='-T1 -c'
 
