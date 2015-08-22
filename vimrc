@@ -9,7 +9,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'stemps/vim-railscasts.git'
 Plugin 'fugitive.vim'
 Plugin 'ack.vim'
 Plugin 'scrooloose/nerdtree'
@@ -36,7 +35,7 @@ Plugin 'quickfixsigns'
 Plugin 'ruby.vim'
 Plugin 'mattn/emmet-vim.git'
 Plugin 'Vim-Rspec'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline'
 Plugin 'ragtag.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'hexHighlight.vim'
@@ -99,13 +98,11 @@ set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
 set laststatus=2                  " Show the status line all the time
-" Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 set mouse=a
 
 " highlight current line
-set cursorline
+" set cursorline
 
 set lazyredraw
 
@@ -184,6 +181,10 @@ set foldtext=MyFoldText()
 
 :nmap <silent> <leader>d <Plug>DashSearch
 :nmap <silent> <leader>D <Plug>DashGlobalSearch
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#displayed_head_limit = 17
+
 " Syntastic -------------------------------------------------------------- {{{
 
 " tell ruby not to output warnings. They have too many false positives
