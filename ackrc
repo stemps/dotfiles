@@ -5,6 +5,7 @@
 --ignore-dir=db/sphinx
 --ignore-dir=.gems
 --ignore-dir=fixtures/vcr-cassettes
+--ignore-dir=db/boxture
 
 --ignore-file=is:tags
 
