@@ -21,3 +21,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Postgres Version Manager
+source /Users/stemps/.pgvm/pgvm_env
+
+# ASDF Version Manager
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
