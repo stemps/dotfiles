@@ -28,3 +28,6 @@ source /Users/stemps/.pgvm/pgvm_env
 # ASDF Version Manager
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+# Flutter
+export PATH=$HOME/opt/flutter/bin:$PATH
