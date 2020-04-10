@@ -23,7 +23,6 @@ Plugin 'surround.vim'
 Plugin 'html-improved-indentation'
 Plugin 'Haml'
 Plugin 'unimpaired.vim'
-Plugin 'simple-pairs'
 Plugin 'commentary.vim'
 Plugin 'vim-coffee-script'
 Plugin 'Syntastic'
@@ -42,6 +41,7 @@ Plugin 'hexHighlight.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'YankRing.vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'dart-lang/dart-vim-plugin'
 
 call vundle#end()
 filetype plugin indent on
