@@ -41,7 +41,8 @@ Plugin 'hexHighlight.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'YankRing.vim'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'hashivim/vim-terraform'
+Plugin 'juliosueiras/vim-terraform-completion'
 
 call vundle#end()
 filetype plugin indent on
