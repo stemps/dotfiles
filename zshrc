@@ -29,5 +29,4 @@ source /Users/stemps/.pgvm/pgvm_env
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-# Flutter
-export PATH=$HOME/opt/flutter/bin:$PATH
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
