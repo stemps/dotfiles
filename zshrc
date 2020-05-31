@@ -27,6 +27,5 @@ source /Users/stemps/.pgvm/pgvm_env
 
 # ASDF Version Manager
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
