@@ -2,9 +2,11 @@
 --exclude=.git
 --exclude=vendor/*
 --exclude=node_modules/*
+--exclude=assets/node_modules/*
 --exclude=db/*
 --exclude=log/*
 --exclude=tmp/*
+--exclude=_build/*
 --langdef=Elixir
 --langmap=Elixir:.ex.exs
 --regex-Elixir=/^[ \t]*def(p?)[ \t]+([a-z_][a-zA-Z0-9_?!]*)/\2/f,functions,functions (def ...)/

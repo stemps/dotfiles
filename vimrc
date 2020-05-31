@@ -45,6 +45,7 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'juliosueiras/vim-terraform-completion'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'craigemery/vim-autotag'
 
 call vundle#end()
 filetype plugin indent on
@@ -324,6 +325,7 @@ map <Leader>sa :call RunAllSpecs()<CR>
 map <leader>vc :tabedit $MYVIMRC<Enter><esc>
 map <leader>vq :tabedit $HOME/Documents/vim-questions.txt<Enter><esc>
 map <leader>vs :tabedit $HOME/Documents/vim-cheatsheet.txt<Enter><esc>
+map <leader>vn :tabedit $HOME/Documents/vim-notes.txt<Enter><esc>
 
 " }}}
 " Search and replace ----------------------------------------------------- {{{
