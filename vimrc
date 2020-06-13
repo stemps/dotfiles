@@ -434,6 +434,11 @@ autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html
 autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.ruby-rspec 
 
 " }}}
+" Elixir ------------------------------------------------------------------- {{{
+
+autocmd FileType elixir imap <C-l> \|><Space>
+
+" }}}
 
 " }}}
 " Hex Colors ------------------------------------------------------------- {{{
