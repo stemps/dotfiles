@@ -264,7 +264,7 @@ let g:ctrlp_map = '<leader><leader>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|public\/system$\|tmp$\|upload$\|fixtures\/vcr_cassettes$\|node_modules$|deps$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|public\/system$\|tmp$\|upload$\|fixtures\/vcr_cassettes$\|node_modules$|deps$|storage$',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
@@ -437,6 +437,8 @@ autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.ruby-rspec
 " Elixir ------------------------------------------------------------------- {{{
 
 autocmd FileType elixir imap <C-l> \|><Space>
+autocmd FileType elixir imap <C-j> <-<Space>
+autocmd FileType elixir imap <C-k> -><Space>
 
 " }}}
 

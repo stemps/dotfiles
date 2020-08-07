@@ -1,6 +1,7 @@
 --ignore-dir=public/system
 --ignore-dir=log
 --ignore-dir=tmp
+--ignore-dir=storage
 --ignore-dir=upload
 --ignore-dir=db/sphinx
 --ignore-dir=.gems
