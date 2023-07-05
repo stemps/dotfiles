@@ -17,15 +17,25 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
  
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Postgres Version Manager
 source /Users/stemps/.pgvm/pgvm_env
 
-# ASDF Version Manager
-. $HOME/.asdf/asdf.sh
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#Rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+
+# ASDF Version Manager
+. $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
+
+# Pyenv
+eval "$(pyenv init --path)"
+
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# commit signing
+export GPG_TTY=$(tty)

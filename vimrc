@@ -46,6 +46,11 @@ Plugin 'juliosueiras/vim-terraform-completion'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'craigemery/vim-autotag'
+Plugin 'posva/vim-vue'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'MaxMEllon/vim-jsx-pretty'
 
 call vundle#end()
 filetype plugin indent on
@@ -74,7 +79,7 @@ set hidden                        " Handle multiple buffers better.
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 set wildignore+=*.o,*.obj
-set wildignore+=*.o,*.obj,.git,public/system/**,tmp,upload,node_modules,deps,storage,_build
+set wildignore+=*.o,*.obj,.git,public/system/**,tmp,upload,node_modules,deps,storage,_build,_deps
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.

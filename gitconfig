@@ -1,6 +1,7 @@
 [user]
 	name = Simon Stemplinger
 	email = simon@stem.ps
+	signingkey = 89C8C4D06E49F612
 [color]
 	diff = auto
 	status = auto
@@ -30,3 +31,7 @@
 	required = true
 [init]
 	templatedir = ~/.git_template
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
