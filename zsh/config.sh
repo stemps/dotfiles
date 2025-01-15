@@ -89,7 +89,7 @@ zle -N zle-keymap-select
 # determine VCS info before prompt is loaded. Such that it doesn't have to be recalculated when the prompt is redrawn
 precmd() {
   VIMODE="$NO_COLOR"
-  VCS_INFO="$(vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$RED%}%gs%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}]%{$NO_COLOR%})"
+  VCS_INFO="$(conda run -n py27 vcprompt --format %{$GREEN%}\[%s:%b%{$BLUE%}%pc%{$RED%}%m%u%{$RED%}%gs%{$GREEN%}\ →\ %{$ECYAN%}%t%{$BLUE%}%pm%{$GREEN%}]%{$NO_COLOR%})"
   if (( $+commands[rvm-prompt] )) ; then
     RVM_INFO="[$(rbenv version-name)]"
   fi

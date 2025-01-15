@@ -20,9 +20,6 @@ compinit
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Postgres Version Manager
-source /Users/stemps/.pgvm/pgvm_env
-
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -39,3 +36,33 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # commit signing
 export GPG_TTY=$(tty)
+
+# Suppress docker spam
+export DOCKER_CLI_HINTS=false
+
+# Enable history in Elixir
+export ERL_AFLAGS=-kernel shell_history enabled
+alias iex="rlwrap --always-readline iex"
+
+
+# bun completions
+[ -s "/Users/stemps/.bun/_bun" ] && source "/Users/stemps/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/stemps/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/stemps/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/stemps/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/stemps/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Android Development
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools

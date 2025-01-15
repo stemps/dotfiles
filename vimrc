@@ -9,7 +9,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'fugitive.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'snipmate-snippets'
@@ -27,7 +27,7 @@ Plugin 'commentary.vim'
 Plugin 'vim-coffee-script'
 Plugin 'Syntastic'
 Plugin 'EasyMotion'
-Plugin 'tlib'
+Plugin 'tomtom/tlib_vim'
 Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-dispatch.git'
 Plugin 'quickfixsigns'
@@ -41,6 +41,7 @@ Plugin 'hexHighlight.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'YankRing.vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'avdgaag/vim-phoenix'
 Plugin 'hashivim/vim-terraform'
 Plugin 'juliosueiras/vim-terraform-completion'
 Plugin 'slashmili/alchemist.vim'
@@ -51,6 +52,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'arthurxavierx/vim-caser'
+Plugin 'iamcco/markdown-preview.nvim'
 
 call vundle#end()
 filetype plugin indent on
@@ -114,6 +117,11 @@ set mouse=a
 " set cursorline
 
 set lazyredraw
+
+set autoread                      " Auto-refresh files that changed outside vim
+
+" Fix for vim-autotag (https://github.com/craigemery/vim-autotag/issues/34)
+let g:autotagStartMethod='fork'
 
 " }}}
 " Appearance ------------------------------------------------------------- {{{
