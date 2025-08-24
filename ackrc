@@ -7,6 +7,7 @@
 --ignore-dir=.gems
 --ignore-dir=fixtures/vcr-cassettes
 --ignore-dir=db/boxture
+--ignore-dir=build
 
 --ignore-file=is:tags
 
@@ -17,3 +18,5 @@
 
 --ignore-dir=_deps
 --ignore-dir=node_modules
+--ignore-dir=vendor
+--ignore-dir=.yarn

@@ -54,6 +54,7 @@ Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'arthurxavierx/vim-caser'
 Plugin 'iamcco/markdown-preview.nvim'
+Plugin 'catppuccin/nvim'
 
 call vundle#end()
 filetype plugin indent on
@@ -82,7 +83,7 @@ set hidden                        " Handle multiple buffers better.
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 set wildignore+=*.o,*.obj
-set wildignore+=*.o,*.obj,.git,public/system/**,tmp,upload,node_modules,deps,storage,_build,_deps
+set wildignore+=*.o,*.obj,.git,public/system/**,tmp,upload,node_modules,deps,storage,build,_build,_deps,**/__pycache__/
 
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
@@ -277,7 +278,7 @@ let g:ctrlp_map = '<leader><leader>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|public\/system$\|tmp$\|upload$\|fixtures\/vcr_cassettes$\|node_modules$|deps$|storage$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|public\/system$\|tmp$\|upload$\|fixtures\/vcr_cassettes$\|node_modules$|deps$|storage$|build$',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
