@@ -6,3 +6,5 @@ vim.g.mapleader = ","
 
 vim.opt.clipboard = "unnamedplus"
 vim.g.neovide_input_use_logo = true
+
+vim.opt.winbar = "%l:%c %=%m %f"
