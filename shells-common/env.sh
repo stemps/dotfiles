@@ -1,6 +1,5 @@
-#export EDITOR='mate -w'
-export EDITOR='vim'
-export BUNDLER_EDITOR='vim'
+export EDITOR='nvim'
+export BUNDLER_EDITOR='nvim'
 
 # enable command line color
 export CLICOLOR=1
@@ -8,7 +7,7 @@ export CLICOLOR=1
 # local bin
 export PATH=~/bin:$PATH
 
-# homebrew 
+# homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Amazon EC2
