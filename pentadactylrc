@@ -1,3 +1,0 @@
-set guioptions+=mT
-set editor='mvim <file>'
-set followhints=1
