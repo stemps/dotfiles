@@ -66,3 +66,9 @@ if [ -f '/Users/stemps/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Created by `pipx` on 2025-09-04 09:03:04
+export PATH="$PATH:/Users/stemps/.local/bin"
+
+# Added by Windsurf
+export PATH="/Users/stemps/.codeium/windsurf/bin:$PATH"
