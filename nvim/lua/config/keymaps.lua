@@ -27,3 +27,7 @@ vim.keymap.set("i", "<D-v>", "<C-R>+") -- Paste insert mode
 -- Yanky
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
+
+-- Tab naviagation
+vim.keymap.set("n", "<M-l>", ":tabnext<CR>")
+vim.keymap.set("n", "<M-h>", ":tabprevious<CR>")
