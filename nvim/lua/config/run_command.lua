@@ -26,7 +26,7 @@ local function open_float_terminal(cmd)
   })
 
   -- Start terminal job
-  vim.fn.termopen(cmd)
+  vim.fn.termopen({ "zsh", "-ic", cmd })
 
   -- Enter insert mode so terminal is interactive
   vim.cmd("startinsert")
@@ -40,29 +40,34 @@ local function open_float_terminal(cmd)
 end
 
 -- Prompt for a command and remember it
-local function prompt_and_remember(run_after)
+local function prompt_and_run(default_cmd, remember)
   vim.ui.input({
     prompt = "Shell command: ",
-    default = last_cmd or "",
+    default = default_cmd or "",
   }, function(input)
     if input and input ~= "" then
-      last_cmd = input
-      if run_after then
-        open_float_terminal(last_cmd)
+      if remember then
+        last_cmd = input
       end
+      open_float_terminal(input)
     end
   end)
 end
 
--- <leader>T : ask for a command, remember it, run in terminal float
-vim.keymap.set("n", "<leader>T", function()
-  prompt_and_remember(true)
+-- run one off command
+vim.keymap.set("n", "<leader>r ", function()
+  prompt_and_run("", false)
+end, { desc = "Run shell command in floating terminal" })
+
+-- <leader>rT : ask for a command, remember it, run in terminal float
+vim.keymap.set("n", "<leader>rT", function()
+  prompt_and_run(last_cmd, true)
 end, { desc = "Set shell command and run in floating terminal" })
 
--- <leader>t : run remembered command, or prompt if none yet
-vim.keymap.set("n", "<leader>t", function()
+-- <leader>rt : run remembered command, or prompt if none yet
+vim.keymap.set("n", "<leader>rt", function()
   if not last_cmd or last_cmd == "" then
-    prompt_and_remember(true)
+    prompt_and_run("", true)
   else
     open_float_terminal(last_cmd)
   end

@@ -29,5 +29,6 @@ vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
 -- Tab naviagation
+vim.keymap.set("n", "<M-t>", ":tabnew<CR>")
 vim.keymap.set("n", "<M-l>", ":tabnext<CR>")
 vim.keymap.set("n", "<M-h>", ":tabprevious<CR>")
