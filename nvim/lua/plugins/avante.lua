@@ -9,7 +9,7 @@ return {
     ---@type avante.Config
     opts = {
       --- other configuration items ...
-      provider = "copilot",
+      provider = "gemini-cli",
       providers = {},
     },
     dependencies = {
