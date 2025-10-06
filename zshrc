@@ -21,13 +21,14 @@ compinit
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
+if [ -f "/opt/homebrew/bin/brew" ]; then eval "$(/opt/homebrew/bin/brew shellenv)"; fi
 
 #Rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 # ASDF Version Manager
-. $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
+if [ -f "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh" ]; then . $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh; fi
 
 # Pyenv
 eval "$(pyenv init --path)"
@@ -68,7 +69,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Created by `pipx` on 2025-09-04 09:03:04
-export PATH="$PATH:/Users/stemps/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
-# Added by Windsurf
-export PATH="/Users/stemps/.codeium/windsurf/bin:$PATH"
+export PATH="$PATH:$HOME/miniconda3/bin"
+
