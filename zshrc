@@ -17,21 +17,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
  
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # Homebrew
 if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"; fi
 if [ -f "/opt/homebrew/bin/brew" ]; then eval "$(/opt/homebrew/bin/brew shellenv)"; fi
 
-#Rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
-
 # ASDF Version Manager
 if [ -f "$HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh" ]; then . $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh; fi
-
-# Pyenv
-eval "$(pyenv init --path)"
 
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -68,8 +59,5 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# Created by `pipx` on 2025-09-04 09:03:04
-export PATH="$PATH:$HOME/.local/bin"
-
-export PATH="$PATH:$HOME/miniconda3/bin"
-
+# Enable Starship prompt
+eval "$(starship init zsh)"
