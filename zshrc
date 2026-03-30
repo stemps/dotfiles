@@ -59,5 +59,17 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Added by Windsurf
+export PATH="/Users/stemps/.codeium/windsurf/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/stemps/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/stemps/.opencode/bin:$PATH
+
+# Worktrunk
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
 # Enable Starship prompt
 eval "$(starship init zsh)"
