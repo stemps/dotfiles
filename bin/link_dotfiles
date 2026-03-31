@@ -16,3 +16,5 @@ ln -s ~/dotfiles/bashrc ~/.bashrc
 ln -s ~/dotfiles/Xmodmap ~/.Xmodmap
 ln -s ~/dotfiles/ctags ~/.ctags
 ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/dotfiles/kitty/ ~/.config
