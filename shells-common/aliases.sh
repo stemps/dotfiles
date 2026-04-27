@@ -59,5 +59,4 @@ alias t='SESSION_NAME=`echo $PWD:t|sed s/\\\./-/g` ;tmux attach -t $SESSION_NAME
 # Workaround for Tmux / Macvim / Clipboard issue
 alias mvim="reattach-to-user-namespace mvim"
 
-# Neovim
-alias nv="neovide &"
+alias lg=lazygit
